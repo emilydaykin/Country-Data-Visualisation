@@ -1,0 +1,57 @@
+.about-section {
+  // border: 3px solid blue;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url('../assets/trees-sky-pink.jpeg');
+    background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 94vh;
+  display: flex;
+  justify-content: center;
+}
+
+.about-wrapper {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-container-left {
+  // border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+  padding: 75px 0 0 75px;
+  max-width: 45%;
+
+
+  h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    // text-shadow: 3px 3px #167c38;
+  }
+
+  p {
+    color: #fff;
+    font-size: 23px;
+  }
+
+}
+
+.about-container-right {
+  // border: 2px solid orange;
+  padding: 75px 100px 0 0;
+  text-align: right;
+  color: #fff;
+
+  a {
+    color: #e0ffff;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
