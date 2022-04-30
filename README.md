@@ -14,7 +14,7 @@ A website visualising green data for XX countries using a countries API.
 
 ## Installation:
 - LINK Live deployed version
-- Clone repo --> npm install --> npm start
+- Clone repo --> `npm install` --> `npm start`
 
 ## Code Base:
 
