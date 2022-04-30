@@ -68,6 +68,11 @@ const Countries = () => {
 
   console.log('state:', state);
 
+  const greenness = 0.5; // min 100 (dark green), max: 255 (light)
+  const diameter = 150;
+  const xPosition = 0.5;
+  const yPosition = 0.2;
+
   return (
     <section className='countries-section'>
       <div className='countries-wrapper'>
@@ -76,7 +81,22 @@ const Countries = () => {
           <div className='graph'>
             <FontAwesomeIcon className='caret caret-up' icon={faAngleUp} />
             <FontAwesomeIcon className='caret caret-right' icon={faAngleRight} />
-            <div className='data-point'>Norway</div>
+            <div className='data-point norway'>Norway</div>
+            <div className='data-point germany'>Germany</div>
+            <div
+              className='data-point'
+              style={{
+                backgroundColor: `rgb(0, ${100 + 155 * (1 - greenness)}, 0)`,
+                height: `${diameter}px`,
+                width: `${diameter}px`,
+                // bottom: `${yPosition * 300}px`
+                // bottom: '50%',
+                left: '50%', // x
+                bottom: 0 // y
+              }}
+            >
+              Spain
+            </div>
           </div>
         </div>
       </div>
