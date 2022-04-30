@@ -23,6 +23,9 @@ const Navbar = () => {
           <Link className='navbar-item' to='/countries'>
             Countries
           </Link>
+          <Link className='navbar-item' to='/countries-chart'>
+            Countries (Chart)
+          </Link>
         </div>
         <div className='navbar-right'>
           {/* <Link className='navbar-item' to='/countries'>
@@ -32,7 +35,7 @@ const Navbar = () => {
           <div>
             <label>
               <select className='dropdown' value='Select Country' onChange={handleChange}>
-                <option selected disabled hidden>
+                <option defaultValue disabled hidden>
                   Select Country
                 </option>
                 {countriesToDisplay.map((country) => (

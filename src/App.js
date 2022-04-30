@@ -5,6 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Countries from './components/Countries';
 import Country from './components/Country';
+import CountryChart from './components/CountriesChart';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/countries' element={<Countries />} />
+        <Route path='/countries-chart' element={<CountryChart />} />
         <Route path='/countries/:id' element={<Country />} />
       </Routes>
     </BrowserRouter>
