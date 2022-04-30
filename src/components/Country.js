@@ -50,7 +50,7 @@ const Country = () => {
             <div className='co2-facts'>
               <h3>Green Facts</h3>
               <p>Co2 emissions: {countryData.co2_emissions}</p>
-              <p>Forested Area: {countryData.forested_area}</p>
+              <p>Forested Area: {countryData.forested_area}%</p>
               <p>Surface Area: {countryData.surface_area}</p>
               <p>Threatened Species: {countryData.threatened_species}</p>
               <p>Tourists: {countryData.tourists}</p>
