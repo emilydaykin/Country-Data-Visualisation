@@ -43,17 +43,27 @@
 }
 
 .data-point {
-  border: 2px solid #03a103;
+  // border: 2px solid #03a103;
   background-color: #03a103;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   border-radius: 100px;
+  position: absolute;
+}
+
+.norway {
   height: 60px;
   width: 60px;
-  position: absolute;
   top: 10px;
   left: 10px;
+}
+
+.germany {
+  height: 60px;
+  width: 60px;
+  top: 100px;
+  left: 50px;
 }
 
