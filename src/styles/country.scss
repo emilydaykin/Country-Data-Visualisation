@@ -6,3 +6,13 @@
 .country-wrapper {
   width: 80%;
 }
+
+.fast-facts {
+  border: 2px solid blue;
+
+  span {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: purple;
+  }
+}
