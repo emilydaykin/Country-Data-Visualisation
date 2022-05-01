@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Chart as ChartJS, LinearScale, PointElement, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, LinearScale, PointElement, Tooltip, Legend, Title } from 'chart.js';
 import { Bubble } from 'react-chartjs-2';
-// import faker from 'faker';
 
-ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
+ChartJS.register(LinearScale, PointElement, Tooltip, Legend, Title);
 
 const BubbleChart = ({
   firstQuantile,
@@ -12,23 +11,44 @@ const BubbleChart = ({
   fourthQuantile,
   fifthQuantile
 }) => {
+  const scaledRadius = 2;
   const options = {
     plugins: {
       title: {
         display: true,
-        text: 'Co2 emissions'
+        text: 'Countries by Co2 emissions, threatened species and forested area',
+        font: 25
+      },
+      legend: {
+        display: true,
+        position: 'right'
       }
     },
     scales: {
+      // y: [
+      //   {
+      //     beginAtZero: true,
+      //     title: 'y-axis label'
+      //   }
+      // ],
       y: {
-        beginAtZero: true
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: 'Threatened Species'
+        }
       },
       x: {
-        beginAtZero: true
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: 'Co2 emissions'
+        }
       }
     }
   };
   const data = {
+    labels: ['Price in USD', 'hmmmm'],
     datasets: [
       {
         label: 'First (Top) Quantile',
@@ -36,7 +56,7 @@ const BubbleChart = ({
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            r: datapoint.forested_area / 3,
+            r: datapoint.forested_area / scaledRadius,
             datalabels: datapoint.name
           };
         }),
@@ -48,7 +68,7 @@ const BubbleChart = ({
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            r: datapoint.forested_area / 3,
+            r: datapoint.forested_area / scaledRadius,
             datalabels: datapoint.name
           };
         }),
@@ -60,7 +80,7 @@ const BubbleChart = ({
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            r: datapoint.forested_area / 3,
+            r: datapoint.forested_area / scaledRadius,
             datalabels: datapoint.name
           };
         }),
@@ -72,7 +92,7 @@ const BubbleChart = ({
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            r: datapoint.forested_area / 3,
+            r: datapoint.forested_area / scaledRadius,
             datalabels: datapoint.name
           };
         }),
@@ -84,7 +104,7 @@ const BubbleChart = ({
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            r: datapoint.forested_area / 3,
+            r: datapoint.forested_area / scaledRadius,
             datalabels: datapoint.name
           };
         }),
