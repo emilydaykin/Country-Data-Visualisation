@@ -22,15 +22,17 @@ const BubbleChart = ({
       legend: {
         display: true,
         position: 'right'
+      },
+      tooltip: {
+        callbacks: {
+          label: (context) => {
+            console.log('context', context);
+            return context.raw.country;
+          }
+        }
       }
     },
     scales: {
-      // y: [
-      //   {
-      //     beginAtZero: true,
-      //     title: 'y-axis label'
-      //   }
-      // ],
       y: {
         beginAtZero: true,
         title: {
@@ -57,7 +59,7 @@ const BubbleChart = ({
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
             r: datapoint.forested_area / scaledRadius,
-            datalabels: datapoint.name
+            country: datapoint.name
           };
         }),
         backgroundColor: 'rgba(255, 99, 132, 0.5)'
@@ -69,7 +71,7 @@ const BubbleChart = ({
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
             r: datapoint.forested_area / scaledRadius,
-            datalabels: datapoint.name
+            country: datapoint.name
           };
         }),
         backgroundColor: 'rgba(255, 255, 132, 0.5)'
@@ -81,7 +83,7 @@ const BubbleChart = ({
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
             r: datapoint.forested_area / scaledRadius,
-            datalabels: datapoint.name
+            country: datapoint.name
           };
         }),
         backgroundColor: 'rgba(53, 162, 235, 0.5)'
@@ -93,7 +95,7 @@ const BubbleChart = ({
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
             r: datapoint.forested_area / scaledRadius,
-            datalabels: datapoint.name
+            country: datapoint.name
           };
         }),
         backgroundColor: 'rgba(26, 127, 26, 0.5)'
@@ -105,7 +107,7 @@ const BubbleChart = ({
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
             r: datapoint.forested_area / scaledRadius,
-            datalabels: datapoint.name
+            country: datapoint.name
           };
         }),
         backgroundColor: 'rgba(246, 162, 6, 0.5)'
