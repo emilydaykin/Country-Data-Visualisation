@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, LinearScale, PointElement, Tooltip, Legend } from 'chart.js';
 import { Bubble } from 'react-chartjs-2';
 // import faker from 'faker';
 
-ChartJS.register(
-  LinearScale,
-  PointElement,
-  Tooltip
-  // Legend
-);
+ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
 
-const BubbleChart = () => {
+const BubbleChart = ({
+  firstQuantile,
+  secondQuantile,
+  thirdQuantile,
+  fourthQuantile,
+  fifthQuantile
+}) => {
   const options = {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Co2 emissions'
+      }
+    },
     scales: {
       y: {
         beginAtZero: true
@@ -21,29 +28,72 @@ const BubbleChart = () => {
       }
     }
   };
-
   const data = {
     datasets: [
       {
-        // label: 'Red dataset',
-        data: Array.from({ length: 1 }, () => ({
-          x: 50,
-          y: 65,
-          r: 15
-        })),
+        label: 'First (Top) Quantile',
+        data: firstQuantile.map((datapoint) => {
+          return {
+            x: datapoint.co2_emissions,
+            y: datapoint.threatened_species,
+            r: datapoint.forested_area / 3,
+            datalabels: datapoint.name
+          };
+        }),
         backgroundColor: 'rgba(255, 99, 132, 0.5)'
       },
       {
-        // label: 'Blue dataset',
-        data: Array.from({ length: 1 }, () => ({
-          x: 32,
-          y: 71,
-          r: 6
-        })),
+        label: 'Second Quantile',
+        data: secondQuantile.map((datapoint) => {
+          return {
+            x: datapoint.co2_emissions,
+            y: datapoint.threatened_species,
+            r: datapoint.forested_area / 3,
+            datalabels: datapoint.name
+          };
+        }),
+        backgroundColor: 'rgba(255, 255, 132, 0.5)'
+      },
+      {
+        label: 'Third Quantile',
+        data: thirdQuantile.map((datapoint) => {
+          return {
+            x: datapoint.co2_emissions,
+            y: datapoint.threatened_species,
+            r: datapoint.forested_area / 3,
+            datalabels: datapoint.name
+          };
+        }),
         backgroundColor: 'rgba(53, 162, 235, 0.5)'
+      },
+      {
+        label: 'Fourth Quantile',
+        data: fourthQuantile.map((datapoint) => {
+          return {
+            x: datapoint.co2_emissions,
+            y: datapoint.threatened_species,
+            r: datapoint.forested_area / 3,
+            datalabels: datapoint.name
+          };
+        }),
+        backgroundColor: 'rgba(26, 127, 26, 0.5)'
+      },
+      {
+        label: 'Fifth (bottom) Quantile',
+        data: fifthQuantile.map((datapoint) => {
+          return {
+            x: datapoint.co2_emissions,
+            y: datapoint.threatened_species,
+            r: datapoint.forested_area / 3,
+            datalabels: datapoint.name
+          };
+        }),
+        backgroundColor: 'rgba(246, 162, 6, 0.5)'
       }
     ]
   };
+
+  console.log('data', data);
 
   return <Bubble options={options} data={data} />;
 };

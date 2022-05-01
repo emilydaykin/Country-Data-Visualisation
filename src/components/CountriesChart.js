@@ -5,8 +5,8 @@ import { countryAPI } from '../lib/api';
 
 const CountryChart = () => {
   const [countries, setCountries] = useState({});
-  const [firstQuantile, setFirstQuantile] = useState({});
-  const [secondQuantile, setSecondQuantile] = useState({});
+  const [firstQuantile, setFirstQuantile] = useState([]);
+  const [secondQuantile, setSecondQuantile] = useState([]);
   const [thirdQuantile, setThirdQuantile] = useState({});
   const [fourthQuantile, setFourthQuantile] = useState({});
   const [fifthQuantile, setFifthQuantile] = useState({});
@@ -82,7 +82,21 @@ const CountryChart = () => {
     <section className='country-section'>
       <div className='country-wrapper'>
         <h1>Country Chart</h1>
-        <BubbleChart />
+        {Object.keys(firstQuantile).length === 0 ||
+        Object.keys(secondQuantile).length === 0 ||
+        Object.keys(thirdQuantile).length === 0 ||
+        Object.keys(fourthQuantile).length === 0 ||
+        Object.keys(fifthQuantile).length === 0 ? (
+          <p>Loading data...</p>
+        ) : (
+          <BubbleChart
+            firstQuantile={firstQuantile}
+            secondQuantile={secondQuantile}
+            thirdQuantile={thirdQuantile}
+            fourthQuantile={fourthQuantile}
+            fifthQuantile={fifthQuantile}
+          />
+        )}
       </div>
     </section>
   );
