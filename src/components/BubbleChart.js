@@ -58,8 +58,11 @@ const BubbleChart = ({
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            r: datapoint.forested_area / scaledRadius,
-            country: datapoint.name
+            // r: datapoint.forested_area / scaledRadius,
+            // r: datapoint.gdp_per_capita / 2000,
+            r: datapoint.gdp / 1000,
+            // r: (datapoint.tourists / datapoint.population) * 50,
+            country: `${datapoint.name} (${datapoint.co2_emissions}, ${datapoint.threatened_species})`
           };
         }),
         backgroundColor: 'rgba(255, 99, 132, 0.5)'
@@ -70,8 +73,11 @@ const BubbleChart = ({
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            r: datapoint.forested_area / scaledRadius,
-            country: datapoint.name
+            // r: datapoint.forested_area / scaledRadius,
+            // r: datapoint.gdp_per_capita / 2000,
+            r: datapoint.gdp / 100000,
+            // r: (datapoint.tourists / datapoint.population) * 10,
+            country: `${datapoint.name} (${datapoint.co2_emissions}, ${datapoint.threatened_species})`
           };
         }),
         backgroundColor: 'rgba(255, 255, 132, 0.5)'
@@ -82,8 +88,9 @@ const BubbleChart = ({
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            r: datapoint.forested_area / scaledRadius,
-            country: datapoint.name
+            // r: datapoint.forested_area / scaledRadius,
+            r: datapoint.gdp_per_capita / 2000,
+            country: `${datapoint.name} (${datapoint.co2_emissions}, ${datapoint.threatened_species})`
           };
         }),
         backgroundColor: 'rgba(53, 162, 235, 0.5)'
@@ -94,8 +101,9 @@ const BubbleChart = ({
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            r: datapoint.forested_area / scaledRadius,
-            country: datapoint.name
+            // r: datapoint.forested_area / scaledRadius,
+            r: datapoint.gdp_per_capita / 2000,
+            country: `${datapoint.name} (${datapoint.co2_emissions}, ${datapoint.threatened_species})`
           };
         }),
         backgroundColor: 'rgba(26, 127, 26, 0.5)'
@@ -106,8 +114,9 @@ const BubbleChart = ({
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            r: datapoint.forested_area / scaledRadius,
-            country: datapoint.name
+            // r: datapoint.forested_area / scaledRadius,
+            r: datapoint.gdp_per_capita / 2000,
+            country: `${datapoint.name} (${datapoint.co2_emissions}, ${datapoint.threatened_species})`
           };
         }),
         backgroundColor: 'rgba(246, 162, 6, 0.5)'

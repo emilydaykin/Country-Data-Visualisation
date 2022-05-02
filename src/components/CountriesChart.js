@@ -45,6 +45,42 @@ const CountryChart = () => {
   }, []);
 
   console.log('countries', countries);
+  console.log('countriesArray', Object.values(countries));
+
+  // GET MAX GDP:
+  console.log(
+    'MAX GDP',
+    Math.max.apply(
+      Math,
+      Object.values(countries).map((country) => {
+        return isNaN(country.gdp) ? 0 : country.gdp;
+      })
+    )
+  );
+  // GET MIN GDP:
+  console.log(
+    'MIN GDP',
+    Math.min.apply(
+      Math,
+      Object.values(countries).map((country) => {
+        // replacing Nans with the max value
+        return isNaN(country.gdp) ? 20580223 : country.gdp;
+      })
+    )
+  );
+
+  console.log(
+    'country >20m GDP:',
+    Object.values(countries).filter((country) => country.gdp > 20000000)
+  );
+
+  // GDP (in millions)
+  // >10,000,000
+  // > 1,000,000
+  // > 100,000
+  // > 10,000
+  // > 1,000
+  // [0 , 1,000]
 
   if (Object.keys(firstQuantile).length > 0) {
     console.log('firstQuantile', firstQuantile);
