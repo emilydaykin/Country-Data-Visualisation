@@ -115,8 +115,8 @@ const CountryChart = () => {
   }
 
   return (
-    <section className='country-section'>
-      <div className='country-wrapper'>
+    <section className='countries-section'>
+      <div className='countries-wrapper'>
         <h1>Country Chart</h1>
         {Object.keys(firstQuantile).length === 0 ||
         Object.keys(secondQuantile).length === 0 ||
