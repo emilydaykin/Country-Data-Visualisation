@@ -11,37 +11,31 @@ header {
 }
 
 .navbar {
-  // margin: 0 20px;
   display: flex;
   width: 80%;
   justify-content: space-between;
 }
 
-.navbar-item {
+.navbar-item, .dropdown {
   color: #fff;
   text-decoration: none;
-  // margin: 20px;
-  padding: 20px;
+  font-weight: 500;
 
   &:hover {
-    color:#630580;
-    background-color: #fff;
-    border-radius: 50px;
+    color:#cbffff;
+    cursor: pointer;
   }
 }
 
-.dropdown:hover {
-  color: #fff;
-  cursor: pointer;
+.navbar-item {
+  padding: 20px;
 }
 
-
-select {
+.dropdown {
   border: none;
   background-color: transparent;
   font-family: inherit;
   font-size: inherit;
-  font-weight: inherit;
   width: 175px;
 }
 
