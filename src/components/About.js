@@ -1,4 +1,6 @@
 import React from 'react';
+import githubLogo from '../assets/github-logo.png';
+import linkedinLogo from '../assets/linkedin-logo.png';
 
 const About = () => {
   return (
@@ -17,14 +19,17 @@ const About = () => {
           <p>
             Copyright &copy; 2022 &nbsp;<span>Emily Daykin</span>
           </p>
-          <p>
-            <img src='../assets/github-logo.png' alt='github logo' />
-            &nbsp;
-            <a href='https://github.com/emilydaykin'>GitHub</a>
-          </p>
-          <p>
-            <a href='https://www.linkedin.com/in/emily-daykin/'>LinkedIn</a>
-          </p>
+
+          <a href='https://github.com/emilydaykin'>
+            GitHub
+            <img src={githubLogo} alt='github logo' />
+          </a>
+
+          <a href='https://www.linkedin.com/in/emily-daykin/'>
+            LinkedIn
+            <img src={linkedinLogo} alt='github logo' />
+          </a>
+
           <p>
             <a href='#'>Portfolio</a>
           </p>

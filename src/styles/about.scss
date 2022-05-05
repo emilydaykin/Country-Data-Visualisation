@@ -48,10 +48,20 @@
 
   a {
     color: #e0ffff;
+    text-decoration: none;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 20px;
   }
 
   span {
     font-weight: bold;
+  }
+
+  img {
+    width: 50px;
+    margin-left: 10px;
   }
 }
 
