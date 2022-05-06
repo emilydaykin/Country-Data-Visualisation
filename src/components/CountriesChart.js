@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BubbleChart from './BubbleChart';
+import Loading from './Loading';
 import { countriesToDisplay } from '../lib/countryList';
 import { countryAPI } from '../lib/api';
 
@@ -123,7 +124,7 @@ const CountryChart = () => {
         Object.keys(thirdQuantile).length === 0 ||
         Object.keys(fourthQuantile).length === 0 ||
         Object.keys(fifthQuantile).length === 0 ? (
-          <p>Loading data...</p>
+          <Loading />
         ) : (
           <BubbleChart
             firstQuantile={firstQuantile}
