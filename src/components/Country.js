@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loading from './Loading';
 import { useParams } from 'react-router-dom';
 import { countryAPI } from '../lib/api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,33 +27,54 @@ const Country = () => {
 
   console.log('countryData', countryData);
 
+  const showGreenData = (data) => {
+    return data ? data.toLocaleString() : 'No Data';
+  };
+
+  const showFastFact = (data) => {
+    if (data === countryData.gdp_per_capita) {
+      // always convert to 2 decimal places and comma-separate 1000s
+      return data
+        ? Number(countryData.gdp_per_capita).toLocaleString(undefined, {
+            minimumFractionDigits: 2
+          })
+        : 'No Data';
+    } else {
+      return data ? data : 'No Data';
+    }
+  };
+
   return (
     <section className='country-section'>
       <div className='country-wrapper'>
         <h1 className='country-name'>{id}</h1>
         {!countryData ? (
-          <p>Loading Data for {id}...</p>
+          // <p>Loading Data for {id}...</p>
+          <Loading />
         ) : (
           <div className='facts-wrapper'>
             <div className='facts fast-facts'>
               <h3>Fast Facts</h3>
               <p>
-                <span className='data-category'>Capital:</span> {countryData.capital}
+                <span className='data-category'>Capital:</span> {showFastFact(countryData.capital)}
               </p>
               <p>
-                <span className='data-category'>Region:</span> {countryData.region}
+                <span className='data-category'>Region:</span> {showFastFact(countryData.region)}
               </p>
               <p>
-                <span className='data-category'>Currency:</span> {countryData.currency.name}
+                <span className='data-category'>Currency:</span>{' '}
+                {showFastFact(countryData.currency.name)}
               </p>
               <p>
-                <span className='data-category'>GDP/capita:</span> US$&nbsp;
-                {Number(countryData.gdp_per_capita).toLocaleString(undefined, {
+                <span className='data-category'>GDP/capita (US$):</span>&nbsp;
+                {/* {Number(countryData.gdp_per_capita).toLocaleString(undefined, {
                   minimumFractionDigits: 2
-                })}
+                })} */}
+                {showFastFact(countryData.gdp_per_capita)}
               </p>
               <p>
-                <span className='data-category'>Internet Users:</span> {countryData.internet_users}%
+                <span className='data-category'>Internet Users (%):</span>{' '}
+                {showFastFact(countryData.internet_users)}
               </p>
             </div>
             <div className='facts all-green-facts'>
@@ -60,29 +82,31 @@ const Country = () => {
               <p>
                 <FontAwesomeIcon icon={faCloudBolt} />
                 <span className='data-category'>
-                  CO<span className='subscript'>2</span> emissions:
+                  CO<span className='subscript'>2</span> emissions (mt):
                 </span>{' '}
-                {countryData.co2_emissions.toLocaleString()} mt
+                {showGreenData(countryData.co2_emissions)}
               </p>
               <p>
                 <FontAwesomeIcon icon={faTree} />
-                <span className='data-category'>Forested Area:</span> {countryData.forested_area}%
+                <span className='data-category'>Forested Area (%):</span>{' '}
+                {showGreenData(countryData.forested_area)}
               </p>
               <p>
                 <FontAwesomeIcon icon={faMountain} />
-                <span className='data-category'>Surface Area:</span>{' '}
-                {countryData.surface_area.toLocaleString()} km
-                <span className='superscript'>2</span>
+                <span className='data-category'>
+                  Surface Area (km<span className='superscript'>2</span>):
+                </span>{' '}
+                {showGreenData(countryData.surface_area)}
               </p>
               <p>
                 <FontAwesomeIcon icon={faPaw} />
                 <span className='data-category'>Threatened Species (n):</span>{' '}
-                {countryData.threatened_species.toLocaleString()}
+                {showGreenData(countryData.threatened_species)}
               </p>
               <p>
                 <FontAwesomeIcon icon={faPersonHiking} />
                 <span className='data-category'>Tourists ('000s):</span>{' '}
-                {countryData.tourists.toLocaleString()}
+                {showGreenData(countryData.tourists)}
               </p>
             </div>
             <div className='green-facts-TEMP'>
@@ -91,7 +115,7 @@ const Country = () => {
                   CO<span className='subscript'>2</span> emissions
                 </span>
                 <FontAwesomeIcon className='icon' icon={faCloudBolt} />
-                <span className='data'>{countryData.co2_emissions.toLocaleString()} mt</span>
+                <span className='data'>{showGreenData(countryData.co2_emissions)} mt</span>
               </div>
               <div className='facts green-fact'>
                 <span className='data-heading'>Forested Area</span>
