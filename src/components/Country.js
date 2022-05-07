@@ -35,10 +35,26 @@ const Country = () => {
     if (data === countryData.gdp_per_capita) {
       // always convert to 2 decimal places and comma-separate 1000s
       return data
-        ? Number(countryData.gdp_per_capita).toLocaleString(undefined, {
+        ? Number(data).toLocaleString(undefined, {
             minimumFractionDigits: 2
           })
         : 'No Data';
+    } else if (data === countryData.population) {
+      return data ? (data * 1000).toLocaleString() : 'No Data';
+    } else if (data === countryData.currency) {
+      return data ? `${data.name} (${data.code})` : 'No Data';
+      // } else if (data === countryData.exports) {
+      //   return data ? data.toLocaleString() : 'No Data';
+    } else if (data === countryData.gdp || data === countryData.exports) {
+      if (!data) {
+        return 'No Data';
+      } else if (data.toString().length >= 7) {
+        return `${(data / 1000000).toFixed(2)} trillion`;
+      } else if (data.toString().length >= 4) {
+        return `${(data / 1000).toFixed(2)} billion`;
+      } else {
+        return `${data} million`;
+      }
     } else {
       return data ? data : 'No Data';
     }
@@ -103,16 +119,23 @@ const Country = () => {
                     {showFastFact(countryData.region)}
                   </p>
                   <p>
-                    <span className='data-category'>Currency:</span>&nbsp;
-                    {showFastFact(countryData.currency.name)}
+                    <span className='data-category'>Population:</span>&nbsp;
+                    {showFastFact(countryData.population)}
                   </p>
                   <p>
-                    <span className='data-category'>GDP/capita (US$):</span>&nbsp;
-                    {showFastFact(countryData.gdp_per_capita)}
+                    <span className='data-category'>Refugees:</span>&nbsp;
+                    {showFastFact(countryData.refugees)}
                   </p>
                   <p>
-                    <span className='data-category'>Internet Users (%):</span>&nbsp;
-                    {showFastFact(countryData.internet_users)}
+                    <span className='data-category'>Population Growth (annual change):</span>&nbsp;
+                    {showFastFact(countryData.pop_growth)}
+                  </p>
+                  <p>
+                    <span className='data-category'>
+                      Population Density (per km<span className='superscript--small'>2</span>):
+                    </span>
+                    &nbsp;
+                    {showFastFact(countryData.pop_density)}
                   </p>
                 </div>
               </div>
@@ -120,16 +143,12 @@ const Country = () => {
                 <h3>Economy</h3>
                 <div className='fast-facts'>
                   <p>
-                    <span className='data-category'>Capital:</span>&nbsp;
-                    {showFastFact(countryData.capital)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Region:</span>{' '}
-                    {showFastFact(countryData.region)}
-                  </p>
-                  <p>
                     <span className='data-category'>Currency:</span>&nbsp;
-                    {showFastFact(countryData.currency.name)}
+                    {showFastFact(countryData.currency)}
+                  </p>
+                  <p>
+                    <span className='data-category'>GDP (US$):</span>&nbsp;
+                    {showFastFact(countryData.gdp)}
                   </p>
                   <p>
                     <span className='data-category'>GDP/capita (US$):</span>&nbsp;
@@ -138,6 +157,21 @@ const Country = () => {
                   <p>
                     <span className='data-category'>Internet Users (%):</span>&nbsp;
                     {showFastFact(countryData.internet_users)}
+                  </p>
+                  <p>
+                    <span className='data-category'>Infant Mortality (per 1,000 live births):</span>
+                    &nbsp;
+                    {showFastFact(countryData.infant_mortality)}
+                  </p>
+                  <p>
+                    <span className='data-category'>Homicide Rate (per 100,000 inhabitants):</span>
+                    &nbsp;
+                    {showFastFact(countryData.homicide_rate)}
+                  </p>
+                  <p>
+                    <span className='data-category'>Exports (US$):</span>
+                    &nbsp;
+                    {showFastFact(countryData.exports)}
                   </p>
                 </div>
               </div>
