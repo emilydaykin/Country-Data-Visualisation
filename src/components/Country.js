@@ -74,7 +74,10 @@ const Country = () => {
         ) : (
           <div className='facts-wrapper'>
             <div className='green-facts'>
-              <div className='facts green-fact' id={!countryData.co2_emissions ? 'no-data' : ''}>
+              <div
+                className='facts green-fact green-fact--co2'
+                id={!countryData.co2_emissions ? 'no-data' : ''}
+              >
                 <span className='data-heading'>
                   CO<span className='subscript'>2</span> emissions
                 </span>
@@ -83,14 +86,20 @@ const Country = () => {
                   {showGreenData(countryData.co2_emissions)} {countryData.co2_emissions ? 'mt' : ''}
                 </span>
               </div>
-              <div className='facts green-fact' id={!countryData.forested_area ? 'no-data' : ''}>
+              <div
+                className='facts green-fact green-fact--forest'
+                id={!countryData.forested_area ? 'no-data' : ''}
+              >
                 <span className='data-heading'>Forested Area</span>
                 <FontAwesomeIcon className='icon' icon={faTree} />
                 <span className='data'>
                   {showGreenData(countryData.forested_area)} {countryData.forested_area ? '%' : ''}
                 </span>
               </div>
-              <div className='facts green-fact' id={!countryData.surface_area ? 'no-data' : ''}>
+              <div
+                className='facts green-fact green-fact--surface'
+                id={!countryData.surface_area ? 'no-data' : ''}
+              >
                 <span className='data-heading'>Surface Area</span>
                 <FontAwesomeIcon className='icon' icon={faMountain} />
                 <span className='data'>
@@ -98,12 +107,12 @@ const Country = () => {
                   <span className='superscript'>2</span>
                 </span>
               </div>
-              <div className='facts green-fact'>
+              <div className='facts green-fact green-fact--species'>
                 <span className='data-heading'>Threatened Species</span>
                 <FontAwesomeIcon className='icon' icon={faPaw} />
                 <span className='data'>{showGreenData(countryData.threatened_species)}</span>
               </div>
-              <div className='facts green-fact'>
+              <div className='facts green-fact green-fact--tourists'>
                 <span className='data-heading'>Number of Tourists</span>
                 <FontAwesomeIcon className='icon' icon={faPersonHiking} />
                 <span className='data'>{showGreenData(countryData.tourists)},000</span>
