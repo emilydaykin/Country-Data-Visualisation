@@ -38,6 +38,11 @@
 .fast-facts-container {
   border: 2px solid red;
   display: flex;
+  flex-direction: column;
+}
+
+.top-facts {
+  display: flex;
 }
 
 .fast-facts {
@@ -46,15 +51,18 @@
   align-items: flex-start;
 }
 
-.general-facts {
+.general-facts-top {
   margin: 1rem;
   width: 50%;
   text-align: center;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // padding: 1rem;
+}
 
+.general-facts-bottom {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // margin-top: 0;
 }
 
 
