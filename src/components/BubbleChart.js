@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Chart as ChartJS, LinearScale, PointElement, Tooltip, Legend, Title } from 'chart.js';
+import { Chart, LinearScale, PointElement, Tooltip, Legend, Title } from 'chart.js';
 import { Bubble } from 'react-chartjs-2';
 
-ChartJS.register(LinearScale, PointElement, Tooltip, Legend, Title);
+Chart.register(LinearScale, PointElement, Tooltip, Legend, Title);
 
 const BubbleChart = ({
   firstQuantile,

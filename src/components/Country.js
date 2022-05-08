@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Loading from './Loading';
 import { useParams } from 'react-router-dom';
 import { countryAPI } from '../lib/api';
+import DoughnutChart from './DonutChart';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMountain,
@@ -277,6 +278,7 @@ const Country = () => {
                     &nbsp;
                     {showFastFact(countryData.post_secondary_enrollment_male)}
                   </p>
+                  <DoughnutChart />
                 </div>
               </div>
             </div>
