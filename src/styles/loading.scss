@@ -1,3 +1,29 @@
 .loading {
   color: #fff;
+  animation: loader 2s infinite;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 300;
+  position: absolute;
+  left: 20%;
+  
+  &--dark {
+    color: #000;
+    left: 30%;
+  }
+}
+
+@keyframes loader {
+  0% {
+    opacity: 0.2;
+  }
+  
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 0.2;
+  }
 }

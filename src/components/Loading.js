@@ -8,7 +8,7 @@ const Loading = () => {
   return !id ? (
     <div className='loading'>Loading data for all countries...</div>
   ) : (
-    <div className='loading'>Loading data for {id}...</div>
+    <div className='loading loading--dark'>Loading data for {id}...</div>
   );
 };
 
