@@ -11,7 +11,7 @@
 }
 
 .country-wrapper {
-  width: 80%;
+  width: 82%;
   margin-top: 60px;
 }
 
@@ -21,7 +21,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .facts {
@@ -45,10 +45,16 @@
     margin-bottom: 15px;
   }
 }
+.facts-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .green-facts {
   display: flex;
   // border: 2px solid blue;
+  max-width: 1024px;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
@@ -106,12 +112,15 @@
 
 .fast-facts-container {
   // border: 2px solid red;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
 
 .top-facts {
   display: flex;
+  width: 100%;
 }
 
 .fast-facts {
