@@ -8,6 +8,7 @@ const SingleBarChart = ({ countryData }) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    indexAxis: 'y',
     height: 200,
     plugins: {
       legend: {
