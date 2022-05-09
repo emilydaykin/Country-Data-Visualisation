@@ -5,19 +5,21 @@
     background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 94vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  // min-height: 
 
   h1 {
     color: #fff;
     margin: 0;
-    font-size: 70px;
-    font-weight: 700;
-    letter-spacing: 4px;
+    font-size: 75px;
+    font-weight: 500;
+    letter-spacing: 10px;
+    // text-transform: uppercase;
     text-shadow: 3px 3px #167c38;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    text-align: center;
   }
 }
 

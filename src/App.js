@@ -3,9 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
-import Countries from './components/Countries';
 import Country from './components/Country';
-import CountryChart from './components/CountriesChart';
+import AllCountries from './components/AllCountries';
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/countries' element={<Countries />} />
-        <Route path='/countries-chart' element={<CountryChart />} />
+        <Route path='/all-countries' element={<AllCountries />} />
         <Route path='/countries/:id' element={<Country />} />
       </Routes>
     </BrowserRouter>

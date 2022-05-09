@@ -13,39 +13,39 @@ const Navbar = () => {
   return (
     <header>
       <nav className='navbar'>
-        <div className='navbar-left'>
-          <Link className='navbar-item' to='/'>
-            Home
-          </Link>
-          <Link className='navbar-item' to='/about'>
-            About
-          </Link>
-          <Link className='navbar-item' to='/countries'>
-            Countries
-          </Link>
-          <Link className='navbar-item' to='/countries-chart'>
-            Countries (Chart)
-          </Link>
-        </div>
-        <div className='navbar-right'>
-          {/* <Link className='navbar-item' to='/countries'>
+        {/* <div className='navbar-left'> */}
+        <Link className='navbar-item' to='/'>
+          Home
+        </Link>
+        <Link className='navbar-item' to='/about'>
+          About
+        </Link>
+        {/* <Link className='navbar-item' to='/countries'>
+          Countries
+        </Link> */}
+        <Link className='navbar-item' to='/all-countries'>
+          All Countries
+        </Link>
+        {/* </div> */}
+        {/* <div className='navbar-right'> */}
+        {/* <Link className='navbar-item' to='/countries'>
             Select Country
           </Link> */}
-          {/* <ReactDropdown options={countriesToDisplay} placeholder='Select Country...' /> */}
-          <div>
-            <label>
-              <select className='dropdown' value='Select Country' onChange={handleChange}>
-                <option defaultValue disabled hidden>
-                  Select Country
-                </option>
-                {countriesToDisplay.map((country) => (
-                  <option key={country} value={country}>
-                    {country}
-                  </option>
-                ))}
-              </select>
-            </label>
-            {/* <label>
+        {/* <ReactDropdown options={countriesToDisplay} placeholder='Select Country...' /> */}
+        {/* <div> */}
+        <label>
+          <select className='dropdown' value='Select Country' onChange={handleChange}>
+            <option defaultValue disabled hidden>
+              Select Country
+            </option>
+            {countriesToDisplay.map((country) => (
+              <option key={country} value={country}>
+                {country}
+              </option>
+            ))}
+          </select>
+        </label>
+        {/* <label>
               <select>
                 <option value='' selected disabled hidden>
                   Choose here
@@ -57,8 +57,8 @@ const Navbar = () => {
                 <option value='5'>Five</option>
               </select>
             </label> */}
-          </div>
-        </div>
+        {/* </div> */}
+        {/* </div> */}
       </nav>
     </header>
   );

@@ -6,7 +6,7 @@ const Loading = () => {
   console.log('id', id);
 
   return !id ? (
-    <div className='loading'>Loading data for all countries...</div>
+    <div className='loading'>Loading data for 192 countries...</div>
   ) : (
     <div className='loading loading--dark'>Loading data for {id}...</div>
   );

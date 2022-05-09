@@ -3,7 +3,11 @@ import React from 'react';
 const Home = () => {
   return (
     <section className='home-section'>
-      <h1>Green Country Data</h1>
+      <h1>
+        Green
+        <br />
+        Country Data
+      </h1>
     </section>
   );
 };

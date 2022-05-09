@@ -4,7 +4,7 @@ import Loading from './Loading';
 import { countriesToDisplay } from '../lib/countryList';
 import { countryAPI } from '../lib/api';
 
-const CountryChart = () => {
+const AllCountries = () => {
   const [countries, setCountries] = useState({});
   const [firstQuantile, setFirstQuantile] = useState([]);
   const [secondQuantile, setSecondQuantile] = useState([]);
@@ -118,7 +118,7 @@ const CountryChart = () => {
   return (
     <section className='countries-section'>
       <div className='countries-wrapper'>
-        <h1 className='country-name'>All Countries</h1>
+        <h1 className='countries-name'>All Countries</h1>
         {Object.keys(firstQuantile).length === 0 ||
         Object.keys(secondQuantile).length === 0 ||
         Object.keys(thirdQuantile).length === 0 ||
@@ -139,4 +139,4 @@ const CountryChart = () => {
   );
 };
 
-export default CountryChart;
+export default AllCountries;
