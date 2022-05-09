@@ -6,7 +6,7 @@ import './styles/home.scss';
 import './styles/about.scss';
 import './styles/all-countries.scss';
 import './styles/country.scss';
-import './styles/bubble.scss';
+import './styles/chart-js.scss';
 import './styles/loading.scss';
 import App from './App';
 

@@ -31,14 +31,81 @@
   padding: 10px 50px;
   margin-bottom: 20px;
 
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
   p {
     margin: 0;
     margin-bottom: 15px;
   }
 }
 
+.green-facts {
+  display: flex;
+  // border: 2px solid blue;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+.green-fact {
+  border: 4px solid #b7eded;
+  border-radius: 15px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 320px;
+  padding: 2rem 3rem;
+  margin: 1rem;
+  transition: transform .2s linear;
+
+  .data-heading {
+    color: purple;
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .icon {
+    font-size: 4rem;
+    margin: 1rem 0;
+    color: #c0e9ba;
+    color: #70b266;
+    color: #a3da9b;
+  }
+
+  .data {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  &:hover {
+    transform: scale(1.17);
+    z-index: 10;
+  }
+}
+
+#no-data {
+  * {
+    color: #cacaca;
+  }
+
+  .data {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+  }
+}
+
 .fast-facts-container {
-  border: 2px solid red;
+  // border: 2px solid red;
   display: flex;
   flex-direction: column;
 }
@@ -86,60 +153,48 @@
   font-size: 1rem;
 }
 
-.green-facts {
+
+.country-health-text {
+  // border: 2px solid orange;
+  position: absolute;
+  // top: 0;
+  margin: 25px 0 0 50px;
+}
+
+.paragraph-category-health {
+  text-align: right;
   display: flex;
-  border: 2px solid blue;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
+}
+.data-category-health {
+  // text-align: center;
+  // display: flex;
+  margin-right: 10px;
+}
+
+.data-point {
+  font-size: 1.75rem;
+  font-weight: 100;
+}
+
+.single-country-plots {
+  display: flex;
+  // border: 2px solid orange;
+  height: 500px;
+  margin-bottom: 20px;
+  // border: 2px solid green;
   position: relative;
 }
 
-.green-fact {
-  border: 4px solid #b7eded;
-  border-radius: 15px;
-  background-color: #fff;
+.country-pie-chart {
+  margin-right: 1rem;
+  // border: 2px solid blue;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 320px;
-  padding: 2rem 3rem;
-  margin: 1rem;
-  transition: transform .2s linear;
-
-  .data-heading {
-    color: purple;
-    font-size: 1.75rem;
-    text-align: center;
-  }
-  
-  .icon {
-    font-size:4rem;
-    margin: 1rem 0;
-    color: #c0e9ba;
-    color: #70b266;
-    color: #a3da9b;
-  }
-
-  .data {
-    font-size: 1.75rem;
-    text-align: center;
-  }
-
-  &:hover {
-    transform: scale(1.17);
-    z-index: 10;
-  }
+  align-items: flex-end;
 }
 
-#no-data {
-  * {
-    color: #cacaca;
-  }
-
-  .data {
-    text-transform: uppercase;
-    font-weight: 300;
-    letter-spacing: 0.05rem;
-  }
+.country-bar-charts {
+  // border: 2px solid blue;
+  height: 250px;
 }

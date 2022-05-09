@@ -3,6 +3,8 @@ import Loading from './Loading';
 import { useParams } from 'react-router-dom';
 import { countryAPI } from '../lib/api';
 import DoughnutChart from './DonutChart';
+import SingleBarChart from './SingleBarChart';
+import GroupedBarChart from './GroupedBarChart';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMountain,
@@ -123,7 +125,9 @@ const Country = () => {
             <div className='fast-facts-container'>
               <div className='top-facts'>
                 <div className='facts general-facts-top'>
-                  <h3>Geography</h3>
+                  <h3>
+                    {id}'s <span>Geography</span>
+                  </h3>
                   <div className='fast-facts'>
                     <p>
                       <span className='data-category'>Capital:</span>&nbsp;
@@ -165,7 +169,9 @@ const Country = () => {
                   </div>
                 </div>
                 <div className='facts general-facts-top'>
-                  <h3>Economy</h3>
+                  <h3>
+                    {id}'s <span>Economy</span>
+                  </h3>
                   <div className='fast-facts'>
                     <p>
                       <span className='data-category'>Currency:</span>&nbsp;
@@ -209,76 +215,38 @@ const Country = () => {
                 </div>
               </div>
               <div className='facts general-facts-bottom'>
-                <h3>Education & Health (PIE & BAR CHARTS)</h3>
+                <h3>
+                  <span>Education & Health</span> in {id}
+                </h3>
                 <div className='fast-facts'>
-                  <p>
-                    <span className='data-category'>Infant Mortality (per 1,000 live births):</span>
-                    &nbsp;
-                    {showFastFact(countryData.infant_mortality)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Fertility (births per woman):</span>
-                    &nbsp;
-                    {showFastFact(countryData.fertility)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Employment Agriculture (%):</span>
-                    &nbsp;
-                    {showFastFact(countryData.employment_agriculture)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Employment Industry (%):</span>
-                    &nbsp;
-                    {showFastFact(countryData.employment_industry)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Employment Services (%):</span>
-                    &nbsp;
-                    {showFastFact(countryData.employment_services)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Life expectancy (female):</span>
-                    &nbsp;
-                    {showFastFact(countryData.life_expectancy_female)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Life expectancy (male):</span>
-                    &nbsp;
-                    {showFastFact(countryData.life_expectancy_male)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Primary school enrollment (female):</span>
-                    &nbsp;
-                    {showFastFact(countryData.primary_school_enrollment_female)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Primary school enrollment (male):</span>
-                    &nbsp;
-                    {showFastFact(countryData.primary_school_enrollment_male)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Secondary school enrollment (female):</span>
-                    &nbsp;
-                    {showFastFact(countryData.secondary_school_enrollment_female)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Secondary school enrollment (male):</span>
-                    &nbsp;
-                    {showFastFact(countryData.secondary_school_enrollment_male)}
-                  </p>
-                  <p>
-                    <span className='data-category'>
-                      Post Secondary school enrollment (female):
-                    </span>
-                    &nbsp;
-                    {showFastFact(countryData.post_secondary_enrollment_female)}
-                  </p>
-                  <p>
-                    <span className='data-category'>Post Secondary school enrollment (male):</span>
-                    &nbsp;
-                    {showFastFact(countryData.post_secondary_enrollment_male)}
-                  </p>
-                  <DoughnutChart />
+                  <div className='country-health-text'>
+                    <p className='paragraph-category-health'>
+                      <span className='data-category data-category-health'>
+                        Infant Mortality <br /> (per 1,000 live births)
+                      </span>
+                      &nbsp;
+                      <span className='data-point'>
+                        {showFastFact(countryData.infant_mortality)}
+                      </span>
+                    </p>
+                    <p className='paragraph-category-health'>
+                      <span className='data-category data-category-health'>
+                        Fertility <br />
+                        (births per woman)
+                      </span>
+                      &nbsp;
+                      <span className='data-point'>{showFastFact(countryData.fertility)}</span>
+                    </p>
+                  </div>
+                  <div className='single-country-plots'>
+                    <div className='country-pie-chart'>
+                      <DoughnutChart countryData={countryData} />
+                    </div>
+                    <div className='country-bar-charts'>
+                      <SingleBarChart countryData={countryData} />
+                      <GroupedBarChart countryData={countryData} />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
