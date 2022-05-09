@@ -11,6 +11,7 @@ const AllCountries = () => {
   const [thirdQuantile, setThirdQuantile] = useState({});
   const [fourthQuantile, setFourthQuantile] = useState({});
   const [fifthQuantile, setFifthQuantile] = useState({});
+  const [sixthQuantile, setSixthQuantile] = useState({});
 
   useEffect(() => {
     const getData = async () => {
@@ -25,25 +26,31 @@ const AllCountries = () => {
       // rank data by forested area
       setCountries(data);
       const dataArray = Object.values(data);
-      const first = dataArray.filter((country) => country.forested_area >= 80);
+      const first = dataArray.filter((country) => country.gdp >= 10000000);
       setFirstQuantile(first);
       const second = dataArray.filter(
-        (country) => country.forested_area >= 60 && country.forested_area < 80
+        (country) => country.gdp >= 1000000 && country.gdp < 10000000
       );
       setSecondQuantile(second);
-      const third = dataArray.filter(
-        (country) => country.forested_area >= 40 && country.forested_area < 60
-      );
+      const third = dataArray.filter((country) => country.gdp >= 100000 && country.gdp < 1000000);
       setThirdQuantile(third);
-      const fourth = dataArray.filter(
-        (country) => country.forested_area >= 20 && country.forested_area < 40
-      );
+      const fourth = dataArray.filter((country) => country.gdp >= 10000 && country.gdp < 100000);
       setFourthQuantile(fourth);
-      const fifth = dataArray.filter((country) => country.forested_area < 20);
+      const fifth = dataArray.filter((country) => country.gdp >= 1000 && country.gdp < 10000);
       setFifthQuantile(fifth);
+      const sixth = dataArray.filter((country) => country.gdp < 1000);
+      setSixthQuantile(sixth);
     };
     getData();
   }, []);
+
+  // GDP (in millions)
+  // >10,000,000(,000,000) = 10 trillion
+  // > 1,000,000(,000,000) = 1 trillion
+  // > 100,000(,000,000) = 100 billion
+  // > 10,000(,000,000) = 10 billion
+  // > 1,000(,000,000) = 1 billion
+  // [0 , 1,000](,000,000) = 1 billion
 
   console.log('countries', countries);
   console.log('countriesArray', Object.values(countries));
@@ -114,6 +121,12 @@ const AllCountries = () => {
       fifthQuantile.map((country) => country.name)
     );
   }
+  if (Object.keys(sixthQuantile).length > 0) {
+    console.log(
+      '6th Quantile',
+      sixthQuantile.map((country) => country.name)
+    );
+  }
 
   return (
     <section className='countries-section'>
@@ -123,7 +136,8 @@ const AllCountries = () => {
         Object.keys(secondQuantile).length === 0 ||
         Object.keys(thirdQuantile).length === 0 ||
         Object.keys(fourthQuantile).length === 0 ||
-        Object.keys(fifthQuantile).length === 0 ? (
+        Object.keys(fifthQuantile).length === 0 ||
+        Object.keys(sixthQuantile).length === 0 ? (
           <Loading />
         ) : (
           <BubbleChart
@@ -132,6 +146,7 @@ const AllCountries = () => {
             thirdQuantile={thirdQuantile}
             fourthQuantile={fourthQuantile}
             fifthQuantile={fifthQuantile}
+            sixthQuantile={sixthQuantile}
           />
         )}
       </div>

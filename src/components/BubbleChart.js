@@ -9,26 +9,66 @@ const BubbleChart = ({
   secondQuantile,
   thirdQuantile,
   fourthQuantile,
-  fifthQuantile
+  fifthQuantile,
+  sixthQuantile
 }) => {
-  const scaledRadius = 2;
+  const scaledRadius = 1.4;
   const options = {
     plugins: {
       title: {
         display: true,
-        text: 'Countries by Co2 emissions, threatened species and forested area',
-        font: 25
+        text: 'Countries by Co2 Emissions, Threatened Species and Forested Area',
+        font: {
+          size: 20,
+          family: 'Poppins'
+        }
       },
       legend: {
         display: true,
-        position: 'right'
+        position: 'right',
+        title: {
+          display: true,
+          text: 'GDP',
+          font: {
+            size: 20,
+            family: 'Poppins'
+          }
+        },
+        labels: {
+          font: {
+            size: 15,
+            family: 'Poppins'
+          }
+        }
+      },
+      datalabels: {
+        color: 'red',
+        labels: {
+          font: {
+            size: 15,
+            family: 'Poppins'
+          }
+        }
       },
       tooltip: {
         callbacks: {
           label: (context) => {
             console.log('context', context);
-            return context.raw.country;
+            const allLabels = context.raw.dataLabels.split(',');
+            console.log('allLabels', allLabels);
+            return [
+              ` ${allLabels[0].toUpperCase()}:`,
+              `   ${Number(
+                allLabels[1]
+              ).toLocaleString()} metric tonnes of Carbon Dioxide Emissions`,
+              `   ${Number(allLabels[2]).toLocaleString()} Threatened Species`,
+              `   ${allLabels[3]}% Forested Area`
+            ];
           }
+        },
+        bodyFont: {
+          size: 15,
+          family: 'Poppins'
         }
       }
     },
@@ -37,89 +77,111 @@ const BubbleChart = ({
         beginAtZero: true,
         title: {
           display: true,
-          text: 'Threatened Species'
+          text: 'Threatened Species (n)',
+          font: {
+            size: 15,
+            family: 'Poppins'
+          }
+        },
+        ticks: {
+          font: {
+            size: 15,
+            family: 'Poppins'
+          }
         }
       },
       x: {
         beginAtZero: true,
         title: {
           display: true,
-          text: 'Co2 emissions'
+          text: 'Co2 emissions (metric tonnes)',
+          font: {
+            size: 15,
+            family: 'Poppins'
+          }
+        },
+        ticks: {
+          font: {
+            size: 15,
+            family: 'Poppins'
+          }
         }
       }
     }
   };
   const data = {
-    labels: ['Price in USD', 'hmmmm'],
     datasets: [
       {
-        label: 'First (Top) Quantile',
+        label: '>= US$ 10 trillion',
         data: firstQuantile.map((datapoint) => {
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            // r: datapoint.forested_area / scaledRadius,
-            // r: datapoint.gdp_per_capita / 2000,
-            r: datapoint.gdp / 1000,
-            // r: (datapoint.tourists / datapoint.population) * 50,
-            country: `${datapoint.name} (${datapoint.co2_emissions}, ${datapoint.threatened_species})`
+            r: datapoint.forested_area / scaledRadius,
+            dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(255, 99, 132, 0.5)'
+        backgroundColor: 'rgba(128, 0, 128, 0.5)'
       },
       {
-        label: 'Second Quantile',
+        label: '>= US$ 1 trillion',
         data: secondQuantile.map((datapoint) => {
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            // r: datapoint.forested_area / scaledRadius,
-            // r: datapoint.gdp_per_capita / 2000,
-            r: datapoint.gdp / 100000,
-            // r: (datapoint.tourists / datapoint.population) * 10,
-            country: `${datapoint.name} (${datapoint.co2_emissions}, ${datapoint.threatened_species})`
+            r: datapoint.forested_area / scaledRadius,
+            dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(255, 255, 132, 0.5)'
+        backgroundColor: 'rgba(159, 10, 200, 0.5)'
       },
       {
-        label: 'Third Quantile',
+        label: `>= US$ 100 billion`,
         data: thirdQuantile.map((datapoint) => {
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            // r: datapoint.forested_area / scaledRadius,
-            r: datapoint.gdp_per_capita / 2000,
-            country: `${datapoint.name} (${datapoint.co2_emissions}, ${datapoint.threatened_species})`
+            r: datapoint.forested_area / scaledRadius,
+            dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(53, 162, 235, 0.5)'
+        backgroundColor: 'rgba(82, 11, 222, 0.5)'
       },
       {
-        label: 'Fourth Quantile',
+        label: '>= US$ 10 billion',
         data: fourthQuantile.map((datapoint) => {
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            // r: datapoint.forested_area / scaledRadius,
-            r: datapoint.gdp_per_capita / 2000,
-            country: `${datapoint.name} (${datapoint.co2_emissions}, ${datapoint.threatened_species})`
+            r: datapoint.forested_area / scaledRadius,
+            dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(26, 127, 26, 0.5)'
+        backgroundColor: 'rgba(20, 7, 164, 0.5)'
       },
       {
-        label: 'Fifth (bottom) Quantile',
+        label: '>= US$ 1 billion',
         data: fifthQuantile.map((datapoint) => {
           return {
             x: datapoint.co2_emissions,
             y: datapoint.threatened_species,
-            // r: datapoint.forested_area / scaledRadius,
-            r: datapoint.gdp_per_capita / 2000,
-            country: `${datapoint.name} (${datapoint.co2_emissions}, ${datapoint.threatened_species})`
+            r: datapoint.forested_area / scaledRadius,
+            dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(246, 162, 6, 0.5)'
+        backgroundColor: 'rgba(6, 88, 219, 0.5)'
+      },
+      {
+        label: '< US$ 1 billion',
+        data: sixthQuantile.map((datapoint) => {
+          return {
+            x: datapoint.co2_emissions,
+            y: datapoint.threatened_species,
+            r: datapoint.forested_area / scaledRadius,
+            dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
+          };
+        }),
+        backgroundColor: 'rgba(6, 162, 219, 0.5)'
       }
     ]
   };
