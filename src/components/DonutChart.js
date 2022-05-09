@@ -4,8 +4,10 @@ import { Doughnut } from 'react-chartjs-2';
 import { Chart, ArcElement } from 'chart.js';
 Chart.register(ArcElement);
 
-const DoughnutChart = () => {
+const DoughnutChart = ({ countryData }) => {
   const options = {
+    // maintainAspectRatio: true,
+    // responsive: true,
     plugins: {
       legend: {
         display: true,
@@ -42,18 +44,21 @@ const DoughnutChart = () => {
   };
 
   const data = {
-    maintainAspectRatio: false,
-    responsive: false,
+    responsive: true,
     labels: ['Agriculture', 'Industry', 'Services'],
     datasets: [
       {
-        data: [2.6, 18.9, 78.5],
+        data: [
+          countryData.employment_agriculture,
+          countryData.employment_industry,
+          countryData.employment_services
+        ],
         backgroundColor: ['#70b266', '#92d088', '#c0e9ba'],
         hoverBackgroundColor: '#b8b8b8'
       }
     ]
   };
-  return <Doughnut className='bubble-chart' options={options} data={data} />;
+  return <Doughnut className='chartJS chartJS__pie' options={options} data={data} />;
 };
 
 export default DoughnutChart;
