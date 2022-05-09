@@ -188,7 +188,7 @@ const BubbleChart = ({
 
   console.log('data', data);
 
-  return <Bubble className='chartJS' options={options} data={data} />;
+  return <Bubble className='chartJS chartJS__all-countries' options={options} data={data} />;
 };
 
 export default BubbleChart;

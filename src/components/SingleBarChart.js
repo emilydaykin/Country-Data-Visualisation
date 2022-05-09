@@ -35,6 +35,34 @@ const SingleBarChart = ({ countryData }) => {
             console.log('context', context);
             return ` ${context.raw}%`;
           }
+        },
+        titleFont: {
+          size: 15,
+          family: 'Poppins'
+        },
+        bodyFont: {
+          size: 15,
+          family: 'Poppins'
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          font: {
+            size: 15,
+            family: 'Poppins'
+          }
+        }
+      },
+      x: {
+        beginAtZero: true,
+        ticks: {
+          font: {
+            size: 15,
+            family: 'Poppins'
+          }
         }
       }
     }

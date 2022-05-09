@@ -33,6 +33,34 @@ const GroupedBarChart = ({ countryData }) => {
             console.log('context', context);
             return ` ${context.dataset.label}: ${context.raw}%`;
           }
+        },
+        titleFont: {
+          size: 15,
+          family: 'Poppins'
+        },
+        bodyFont: {
+          size: 15,
+          family: 'Poppins'
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          font: {
+            size: 15,
+            family: 'Poppins'
+          }
+        }
+      },
+      x: {
+        beginAtZero: true,
+        ticks: {
+          font: {
+            size: 15,
+            family: 'Poppins'
+          }
         }
       }
     }
@@ -40,7 +68,7 @@ const GroupedBarChart = ({ countryData }) => {
 
   const data = {
     responsive: true,
-    labels: ['Primary', 'Secondary', 'Higher Education'],
+    labels: ['Primary', 'Secondary', ['Higher', 'Education']],
     datasets: [
       {
         label: 'Female',

@@ -33,6 +33,10 @@ const DoughnutChart = ({ countryData }) => {
             console.log('context', context);
             return ` ${context.label}: ${context.raw}%`;
           }
+        },
+        bodyFont: {
+          size: 15,
+          family: 'Poppins'
         }
       }
     },
