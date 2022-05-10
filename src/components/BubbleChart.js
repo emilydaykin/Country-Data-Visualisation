@@ -119,7 +119,11 @@ const BubbleChart = ({
             dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(128, 0, 128, 0.5)'
+        backgroundColor: 'rgba(128, 0, 128, 0.5)',
+        borderColor: 'rgba(128, 0, 128)',
+        borderWidth: 2,
+        hoverBackgroundColor: 'rgba(220, 220, 220, 0.5)',
+        hoverBorderWidth: 3
       },
       {
         label: '>= US$ 1 trillion',
@@ -131,7 +135,11 @@ const BubbleChart = ({
             dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(159, 10, 200, 0.5)'
+        backgroundColor: 'rgba(159, 10, 200, 0.5)',
+        borderColor: 'rgba(159, 10, 200)',
+        borderWidth: 2,
+        hoverBackgroundColor: 'rgba(220, 220, 220, 0.5)',
+        hoverBorderWidth: 3
       },
       {
         label: `>= US$ 100 billion`,
@@ -143,7 +151,11 @@ const BubbleChart = ({
             dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(82, 11, 222, 0.5)'
+        backgroundColor: 'rgba(82, 11, 222, 0.5)',
+        borderColor: 'rgba(82, 11, 222)',
+        borderWidth: 2,
+        hoverBackgroundColor: 'rgba(220, 220, 220, 0.5)',
+        hoverBorderWidth: 3
       },
       {
         label: '>= US$ 10 billion',
@@ -155,7 +167,11 @@ const BubbleChart = ({
             dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(20, 7, 164, 0.5)'
+        backgroundColor: 'rgba(20, 7, 164, 0.5)',
+        borderColor: 'rgba(20, 7, 164)',
+        borderWidth: 2,
+        hoverBackgroundColor: 'rgba(220, 220, 220, 0.5)',
+        hoverBorderWidth: 3
       },
       {
         label: '>= US$ 1 billion',
@@ -167,7 +183,11 @@ const BubbleChart = ({
             dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(6, 88, 219, 0.5)'
+        backgroundColor: 'rgba(6, 88, 219, 0.5)',
+        borderColor: 'rgba(6, 88, 219)',
+        borderWidth: 2,
+        hoverBackgroundColor: 'rgba(220, 220, 220, 0.5)',
+        hoverBorderWidth: 3
       },
       {
         label: '< US$ 1 billion',
@@ -179,7 +199,11 @@ const BubbleChart = ({
             dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`
           };
         }),
-        backgroundColor: 'rgba(6, 162, 219, 0.5)'
+        backgroundColor: 'rgba(6, 162, 219, 0.5)',
+        borderColor: 'rgba(6, 162, 219)',
+        borderWidth: 2,
+        hoverBackgroundColor: 'rgba(220, 220, 220, 0.5)',
+        hoverBorderWidth: 3
       }
     ]
   };
