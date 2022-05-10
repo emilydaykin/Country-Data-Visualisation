@@ -9,7 +9,8 @@ const About = () => {
         <div className='about-container-left'>
           <h1>Welcome!</h1>
           <p>
-            Navigate to the Countries tab or select a country to see how green the countries are!
+            Navigate to the Countries tab or select a country to see how green the countries are!{' '}
+            <br />
             Data points include forested area, carbon dioxide emissions, threatened species,
             tourists and much more!
           </p>
