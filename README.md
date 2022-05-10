@@ -43,7 +43,7 @@ A React.js web application visualising green data for 192 countries using an API
 - Deployment: Netlify
 
 ## Installation:
-- LINK Live deployed version
+- Check out the [deployed application](https://green-data.netlify.app)!
 - Clone repo --> `npm install` --> `npm start`
 
 ## Featured Code Snippets:
