@@ -89,8 +89,6 @@
   .icon {
     font-size: 4rem;
     margin: 1rem 0;
-    color: #c0e9ba;
-    color: #70b266;
     color: #a3da9b;
   }
 
@@ -101,7 +99,6 @@
 
   &:hover {
     transform: scale(1.17);
-    z-index: 10;
   }
 }
 
@@ -140,6 +137,15 @@
   flex-direction: column;
   align-items: flex-start;
 
+  &__data-category {
+    font-size: 1.05rem;
+    color: purple;
+
+    &--health {
+      margin-right: 10px;
+    }
+  }
+
   &__country-health-text {
     position: absolute;
     margin: 25px 0 0 50px;
@@ -151,30 +157,6 @@
     justify-content: flex-end;
     align-items: center;
   }
-}
-
-.data-category {
-  font-size: 1.05rem;
-  color: purple;
-
-  &--health {
-    margin-right: 10px;
-  }
-}
-
-.superscript {
-  vertical-align: super;
-  font-size: 1rem;
-
-  &--small {
-    vertical-align: super;
-    font-size: 0.75rem;
-  }
-}
-
-.subscript {
-  vertical-align: sub;
-  font-size: 1rem;
 }
 
 .data-point {

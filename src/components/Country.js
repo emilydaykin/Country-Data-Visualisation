@@ -43,8 +43,6 @@ const Country = () => {
       return data ? (data * 1000).toLocaleString() : 'No Data';
     } else if (data === countryData.currency) {
       return data ? `${data.name} (${data.code})` : 'No Data';
-      // } else if (data === countryData.exports) {
-      //   return data ? data.toLocaleString() : 'No Data';
     } else if (
       data === countryData.gdp ||
       data === countryData.exports ||
@@ -126,39 +124,40 @@ const Country = () => {
                   </h3>
                   <div className='general-facts'>
                     <p>
-                      <span className='data-category'>Capital:</span>&nbsp;
+                      <span className='general-facts__data-category'>Capital:</span>&nbsp;
                       {showFastFact(countryData.capital)}
                     </p>
                     <p>
-                      <span className='data-category'>Region:</span>{' '}
+                      <span className='general-facts__data-category'>Region:</span>{' '}
                       {showFastFact(countryData.region)}
                     </p>
                     <p>
-                      <span className='data-category'>Population:</span>&nbsp;
+                      <span className='general-facts__data-category'>Population:</span>&nbsp;
                       {showFastFact(countryData.population)}
                     </p>
                     <p>
-                      <span className='data-category'>Population Growth:</span>
+                      <span className='general-facts__data-category'>Population Growth:</span>
                       &nbsp;
                       {showFastFact(countryData.pop_growth)}
                     </p>
                     <p>
-                      <span className='data-category'>Urban Population (%):</span>&nbsp;
+                      <span className='general-facts__data-category'>Urban Population (%):</span>
+                      &nbsp;
                       {showFastFact(countryData.urban_population)}
                     </p>
                     <p>
-                      <span className='data-category'>Refugees:</span>&nbsp;
+                      <span className='general-facts__data-category'>Refugees:</span>&nbsp;
                       {showFastFact(countryData.refugees)}
                     </p>
                     <p>
-                      <span className='data-category'>
+                      <span className='general-facts__data-category'>
                         Population Density (per km<span className='superscript--small'>2</span>):
                       </span>
                       &nbsp;
                       {showFastFact(countryData.pop_density)}
                     </p>
                     <p>
-                      <span className='data-category'>Sex Ratio:</span>
+                      <span className='general-facts__data-category'>Sex Ratio:</span>
                       &nbsp;
                       {showFastFact(countryData.sex_ratio)}
                     </p>
@@ -170,40 +169,41 @@ const Country = () => {
                   </h3>
                   <div className='general-facts'>
                     <p>
-                      <span className='data-category'>Currency:</span>&nbsp;
+                      <span className='general-facts__data-category'>Currency:</span>&nbsp;
                       {showFastFact(countryData.currency)}
                     </p>
                     <p>
-                      <span className='data-category'>GDP (US$):</span>&nbsp;
+                      <span className='general-facts__data-category'>GDP (US$):</span>&nbsp;
                       {showFastFact(countryData.gdp)}
                     </p>
                     <p>
-                      <span className='data-category'>GDP/capita (US$):</span>&nbsp;
+                      <span className='general-facts__data-category'>GDP/capita (US$):</span>&nbsp;
                       {showFastFact(countryData.gdp_per_capita)}
                     </p>
                     <p>
-                      <span className='data-category'>Internet Users (%):</span>&nbsp;
+                      <span className='general-facts__data-category'>Internet Users (%):</span>
+                      &nbsp;
                       {showFastFact(countryData.internet_users)}
                     </p>
                     <p>
-                      <span className='data-category'>Unemployment (%):</span>
+                      <span className='general-facts__data-category'>Unemployment (%):</span>
                       &nbsp;
                       {showFastFact(countryData.unemployment)}
                     </p>
                     <p>
-                      <span className='data-category'>
+                      <span className='general-facts__data-category'>
                         Homicide Rate (per 100,000 inhabitants):
                       </span>
                       &nbsp;
                       {showFastFact(countryData.homicide_rate)}
                     </p>
                     <p>
-                      <span className='data-category'>Exports (US$):</span>
+                      <span className='general-facts__data-category'>Exports (US$):</span>
                       &nbsp;
                       {showFastFact(countryData.exports)}
                     </p>
                     <p>
-                      <span className='data-category'>Imports (US$):</span>
+                      <span className='general-facts__data-category'>Imports (US$):</span>
                       &nbsp;
                       {showFastFact(countryData.imports)}
                     </p>
@@ -217,7 +217,7 @@ const Country = () => {
                 <div className='general-facts'>
                   <div className='general-facts__country-health-text'>
                     <p className='general-facts__health-paragraph'>
-                      <span className='data-category data-category--health'>
+                      <span className='general-facts__data-category general-facts__data-category--health'>
                         Infant Mortality <br /> (per 1,000 live births)
                       </span>
                       &nbsp;
@@ -226,7 +226,7 @@ const Country = () => {
                       </span>
                     </p>
                     <p className='general-facts__health-paragraph'>
-                      <span className='data-category data-category--health'>
+                      <span className='general-facts__data-category general-facts__data-category--health'>
                         Fertility <br />
                         (births per woman)
                       </span>
