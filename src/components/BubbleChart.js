@@ -17,7 +17,11 @@ const BubbleChart = ({
     plugins: {
       title: {
         display: true,
-        text: 'Countries by Co2 Emissions, Threatened Species and Forested Area',
+        text: [
+          'Countries by Co2 Emissions (x), Threatened Species (y)',
+          'and Forested Area (radius)',
+          ''
+        ],
         font: {
           size: 20,
           family: 'Poppins'
@@ -57,10 +61,10 @@ const BubbleChart = ({
             return [
               ` ${allLabels[0].toUpperCase()}:`,
               `   ${Number(
-                allLabels[1]
+                allLabels[allLabels.length - 3]
               ).toLocaleString()} metric tonnes of Carbon Dioxide Emissions`,
-              `   ${Number(allLabels[2]).toLocaleString()} Threatened Species`,
-              `   ${allLabels[3]}% Forested Area`
+              `   ${Number(allLabels[allLabels.length - 2]).toLocaleString()} Threatened Species`,
+              `   ${allLabels[allLabels.length - 1]}% Forested Area`
             ];
           }
         },
@@ -110,7 +114,7 @@ const BubbleChart = ({
   const data = {
     datasets: [
       {
-        label: '>= US$ 10 trillion',
+        label: '>= US$ 10 trillion (n=2)',
         data: firstQuantile.map((datapoint) => {
           return {
             x: datapoint.co2_emissions,
@@ -126,7 +130,7 @@ const BubbleChart = ({
         hoverBorderWidth: 3
       },
       {
-        label: '>= US$ 1 trillion',
+        label: '>= US$ 1 trillion (n=14)',
         data: secondQuantile.map((datapoint) => {
           return {
             x: datapoint.co2_emissions,
@@ -142,7 +146,7 @@ const BubbleChart = ({
         hoverBorderWidth: 3
       },
       {
-        label: `>= US$ 100 billion`,
+        label: `>= US$ 100 billion (n=47)`,
         data: thirdQuantile.map((datapoint) => {
           return {
             x: datapoint.co2_emissions,
@@ -158,7 +162,7 @@ const BubbleChart = ({
         hoverBorderWidth: 3
       },
       {
-        label: '>= US$ 10 billion',
+        label: '>= US$ 10 billion (n=76)',
         data: fourthQuantile.map((datapoint) => {
           return {
             x: datapoint.co2_emissions,
@@ -174,7 +178,7 @@ const BubbleChart = ({
         hoverBorderWidth: 3
       },
       {
-        label: '>= US$ 1 billion',
+        label: '>= US$ 1 billion (n=40)',
         data: fifthQuantile.map((datapoint) => {
           return {
             x: datapoint.co2_emissions,
@@ -190,10 +194,10 @@ const BubbleChart = ({
         hoverBorderWidth: 3
       },
       {
-        label: '< US$ 1 billion',
+        label: ['< US$ 1 billion (n=12)', 'no data for CO2'],
         data: sixthQuantile.map((datapoint) => {
           return {
-            x: datapoint.co2_emissions,
+            x: 0, // all countries in this quantile have no data for C02
             y: datapoint.threatened_species,
             r: datapoint.forested_area / scaledRadius,
             dataLabels: `${datapoint.name},${datapoint.co2_emissions},${datapoint.threatened_species},${datapoint.forested_area}`

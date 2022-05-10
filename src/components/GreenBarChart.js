@@ -45,7 +45,6 @@ const GreenBarChart = ({
             return `${context[0].label.split(',')[0]}`;
           },
           label: (context) => {
-            console.log('label context', context);
             if (context.dataset.label.toLowerCase().includes('co2')) {
               return ` ${context.dataset.label.split(' ').slice(0, 2).join(' ')}: ${Number(
                 context.raw.toFixed(0)
