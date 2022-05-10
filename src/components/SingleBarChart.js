@@ -5,6 +5,10 @@ import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend }
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const SingleBarChart = ({ countryData }) => {
+  const setFont = (fontSize) => {
+    return { size: fontSize, family: 'Poppins' };
+  };
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -15,19 +19,13 @@ const SingleBarChart = ({ countryData }) => {
         display: false,
         position: 'bottom',
         labels: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       title: {
         display: true,
         text: 'Life Expectancy (years)',
-        font: {
-          size: 20,
-          family: 'Poppins'
-        }
+        font: setFont(20)
       },
       tooltip: {
         callbacks: {
@@ -35,33 +33,21 @@ const SingleBarChart = ({ countryData }) => {
             return ` ${context.raw}%`;
           }
         },
-        titleFont: {
-          size: 15,
-          family: 'Poppins'
-        },
-        bodyFont: {
-          size: 15,
-          family: 'Poppins'
-        }
+        titleFont: setFont(15),
+        bodyFont: setFont(15)
       }
     },
     scales: {
       y: {
         beginAtZero: true,
         ticks: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       x: {
         beginAtZero: true,
         ticks: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       }
     }

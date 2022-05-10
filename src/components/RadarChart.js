@@ -55,6 +55,10 @@ const RadarChart = ({
     return [minCountry.name, minForestedArea];
   };
 
+  const setFont = (fontSize) => {
+    return { size: fontSize, family: 'Poppins' };
+  };
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -63,19 +67,13 @@ const RadarChart = ({
         display: true,
         position: 'top',
         labels: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       title: {
         display: true,
         text: 'Forested Area across Continents',
-        font: {
-          size: 20,
-          family: 'Poppins'
-        }
+        font: setFont(20)
       },
       tooltip: {
         callbacks: {
@@ -93,31 +91,19 @@ const RadarChart = ({
             }
           }
         },
-        titleFont: {
-          size: 15,
-          family: 'Poppins'
-        },
-        bodyFont: {
-          size: 15,
-          family: 'Poppins'
-        }
+        titleFont: setFont(15),
+        bodyFont: setFont(15)
       }
     },
     scale: {
       ticks: {
-        font: {
-          size: 15,
-          family: 'Poppins'
-        }
+        font: setFont(15)
       }
     },
     scales: {
       r: {
         pointLabels: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       }
     },

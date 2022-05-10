@@ -5,6 +5,10 @@ import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend }
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const GroupedBarChart = ({ countryData }) => {
+  const setFont = (fontSize) => {
+    return { size: fontSize, family: 'Poppins' };
+  };
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -13,19 +17,13 @@ const GroupedBarChart = ({ countryData }) => {
         display: true,
         position: 'bottom',
         labels: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       title: {
         display: true,
         text: 'School Enrollment (% gross)',
-        font: {
-          size: 20,
-          family: 'Poppins'
-        }
+        font: setFont(20)
       },
       tooltip: {
         callbacks: {
@@ -33,33 +31,21 @@ const GroupedBarChart = ({ countryData }) => {
             return ` ${context.dataset.label}: ${context.raw}%`;
           }
         },
-        titleFont: {
-          size: 15,
-          family: 'Poppins'
-        },
-        bodyFont: {
-          size: 15,
-          family: 'Poppins'
-        }
+        titleFont: setFont(15),
+        bodyFont: setFont(15)
       }
     },
     scales: {
       y: {
         beginAtZero: true,
         ticks: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       x: {
         beginAtZero: true,
         ticks: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       }
     }

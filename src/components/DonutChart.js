@@ -5,25 +5,23 @@ import { Chart, ArcElement } from 'chart.js';
 Chart.register(ArcElement);
 
 const DoughnutChart = ({ countryData }) => {
+  const setFont = (fontSize) => {
+    return { size: fontSize, family: 'Poppins' };
+  };
+
   const options = {
     plugins: {
       legend: {
         display: true,
         position: 'bottom',
         labels: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       title: {
         display: true,
         text: 'Employment',
-        font: {
-          size: 20,
-          family: 'Poppins'
-        }
+        font: setFont(20)
       },
       tooltip: {
         callbacks: {
@@ -31,10 +29,7 @@ const DoughnutChart = ({ countryData }) => {
             return ` ${context.label}: ${context.raw}%`;
           }
         },
-        bodyFont: {
-          size: 15,
-          family: 'Poppins'
-        }
+        bodyFont: setFont(15)
       }
     },
     elements: {

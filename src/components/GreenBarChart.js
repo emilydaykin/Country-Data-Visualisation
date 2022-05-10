@@ -18,6 +18,10 @@ const GreenBarChart = ({
       return a + next;
     }, 0);
 
+  const setFont = (fontSize) => {
+    return { size: fontSize, family: 'Poppins' };
+  };
+
   const options = {
     responsive: true,
     plugins: {
@@ -25,19 +29,13 @@ const GreenBarChart = ({
         display: true,
         position: 'bottom',
         labels: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       title: {
         display: true,
         text: 'Total Carbon Dioxide Emissions and Threatened Species across Continents',
-        font: {
-          size: 20,
-          family: 'Poppins'
-        }
+        font: setFont(20)
       },
       tooltip: {
         callbacks: {
@@ -57,33 +55,21 @@ const GreenBarChart = ({
             }
           }
         },
-        titleFont: {
-          size: 15,
-          family: 'Poppins'
-        },
-        bodyFont: {
-          size: 15,
-          family: 'Poppins'
-        }
+        titleFont: setFont(15),
+        bodyFont: setFont(15)
       }
     },
     scales: {
       y: {
         beginAtZero: true,
         ticks: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       x: {
         beginAtZero: true,
         ticks: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       }
     },

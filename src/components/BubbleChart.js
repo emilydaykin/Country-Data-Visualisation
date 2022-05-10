@@ -13,6 +13,11 @@ const BubbleChart = ({
   sixthQuantile
 }) => {
   const scaledRadius = 1.4;
+
+  const setFont = (fontSize) => {
+    return { size: fontSize, family: 'Poppins' };
+  };
+
   const options = {
     plugins: {
       title: {
@@ -22,10 +27,7 @@ const BubbleChart = ({
           'and Forested Area (radius)',
           ''
         ],
-        font: {
-          size: 20,
-          family: 'Poppins'
-        }
+        font: setFont(20)
       },
       legend: {
         display: true,
@@ -33,25 +35,16 @@ const BubbleChart = ({
         title: {
           display: true,
           text: 'GDP',
-          font: {
-            size: 20,
-            family: 'Poppins'
-          }
+          font: setFont(20)
         },
         labels: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       datalabels: {
         color: 'red',
         labels: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       tooltip: {
@@ -68,10 +61,7 @@ const BubbleChart = ({
             ];
           }
         },
-        bodyFont: {
-          size: 15,
-          family: 'Poppins'
-        }
+        bodyFont: setFont(15)
       }
     },
     scales: {
@@ -80,16 +70,10 @@ const BubbleChart = ({
         title: {
           display: true,
           text: 'Threatened Species (n)',
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         },
         ticks: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       },
       x: {
@@ -97,16 +81,10 @@ const BubbleChart = ({
         title: {
           display: true,
           text: 'Co2 emissions (metric tonnes)',
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         },
         ticks: {
-          font: {
-            size: 15,
-            family: 'Poppins'
-          }
+          font: setFont(15)
         }
       }
     }
