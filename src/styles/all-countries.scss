@@ -1,24 +1,31 @@
-.countries-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-  url('../assets/green-mountains.jpeg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  min-height: 100vh; 
-  display: flex;
-  justify-content: center;
-  padding-bottom: 30px;
-}
+.countries {
+  
+  &__section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+    url('../assets/green-mountains.jpeg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
 
-.countries-wrapper {
-  width: 80%;
-  margin-top: 60px;
-}
+  &__wrapper {
+    width: 80%;
+    margin-top: 60px;
+  }
 
-.countries-name {
-  color: azure;
-  font-size: 2rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  &__name {
+    color: azure;
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  &__chart {
+    height: 800px;
+  }
 }

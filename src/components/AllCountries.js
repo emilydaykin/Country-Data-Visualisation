@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BubbleChart from './BubbleChart';
 import GreenBarChart from './GreenBarChart';
+import RadarChart from './RadarChart';
 import Loading from './Loading';
 import { countriesToDisplay } from '../lib/countryList';
 import { countryAPI } from '../lib/api';
@@ -176,9 +177,9 @@ const AllCountries = () => {
   // }
 
   return (
-    <section className='countries-section'>
-      <div className='countries-wrapper'>
-        <h1 className='countries-name'>All Countries</h1>
+    <section className='countries__section'>
+      <div className='countries__wrapper'>
+        <h1 className='countries__name'>All Countries</h1>
         {Object.keys(firstQuantile).length === 0 ||
         Object.keys(secondQuantile).length === 0 ||
         Object.keys(thirdQuantile).length === 0 ||
@@ -205,14 +206,26 @@ const AllCountries = () => {
         Object.keys(oceaniaCountries).length === 0 ? (
           <Loading />
         ) : (
-          <GreenBarChart
-            asiaCountries={asiaCountries}
-            africaCountries={africaCountries}
-            europeCountries={europeCountries}
-            northAmericaCountries={northAmericaCountries}
-            southAmericaCountries={southAmericaCountries}
-            oceaniaCountries={oceaniaCountries}
-          />
+          <>
+            <GreenBarChart
+              asiaCountries={asiaCountries}
+              africaCountries={africaCountries}
+              europeCountries={europeCountries}
+              northAmericaCountries={northAmericaCountries}
+              southAmericaCountries={southAmericaCountries}
+              oceaniaCountries={oceaniaCountries}
+            />
+            <div className='countries__radar-chart'>
+              <RadarChart
+                asiaCountries={asiaCountries}
+                africaCountries={africaCountries}
+                europeCountries={europeCountries}
+                northAmericaCountries={northAmericaCountries}
+                southAmericaCountries={southAmericaCountries}
+                oceaniaCountries={oceaniaCountries}
+              />
+            </div>
+          </>
         )}
       </div>
     </section>
