@@ -2,8 +2,8 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <section className='home-section'>
-      <h1>
+    <section className='home'>
+      <h1 className='home__heading'>
         Green
         <br />
         Country Data
