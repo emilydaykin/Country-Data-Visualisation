@@ -7,8 +7,8 @@ import { countriesToDisplay } from '../lib/countryList';
 import { countryAPI } from '../lib/api';
 
 const AllCountries = () => {
-  const [firstQuantile, setFirstQuantile] = useState([]);
-  const [secondQuantile, setSecondQuantile] = useState([]);
+  const [firstQuantile, setFirstQuantile] = useState({});
+  const [secondQuantile, setSecondQuantile] = useState({});
   const [thirdQuantile, setThirdQuantile] = useState({});
   const [fourthQuantile, setFourthQuantile] = useState({});
   const [fifthQuantile, setFifthQuantile] = useState({});
