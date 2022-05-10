@@ -41,10 +41,21 @@ const GreenBarChart = ({
       },
       tooltip: {
         callbacks: {
+          title: (context) => {
+            return `${context[0].label.split(',')[0]}`;
+          },
           label: (context) => {
-            return ` ${context.dataset.label.split(' ').slice(0, 2).join(' ')}: ${Number(
-              context.raw.toFixed(0)
-            ).toLocaleString()}`;
+            console.log('label context', context);
+            if (context.dataset.label.toLowerCase().includes('co2')) {
+              return ` ${context.dataset.label.split(' ').slice(0, 2).join(' ')}: ${Number(
+                context.raw.toFixed(0)
+              ).toLocaleString()} mt`;
+            } else {
+              return ` ${Number(context.raw.toFixed(0)).toLocaleString()} ${context.dataset.label
+                .split(' ')
+                .slice(0, 2)
+                .join(' ')}`;
+            }
           }
         },
         titleFont: {
