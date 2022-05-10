@@ -32,7 +32,6 @@ const SingleBarChart = ({ countryData }) => {
       tooltip: {
         callbacks: {
           label: (context) => {
-            console.log('context', context);
             return ` ${context.raw}%`;
           }
         },

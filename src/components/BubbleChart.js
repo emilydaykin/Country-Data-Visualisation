@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Chart, LinearScale, PointElement, Tooltip, Legend, Title } from 'chart.js';
 import { Bubble } from 'react-chartjs-2';
 
@@ -53,9 +53,7 @@ const BubbleChart = ({
       tooltip: {
         callbacks: {
           label: (context) => {
-            console.log('context', context);
             const allLabels = context.raw.dataLabels.split(',');
-            console.log('allLabels', allLabels);
             return [
               ` ${allLabels[0].toUpperCase()}:`,
               `   ${Number(
@@ -185,8 +183,6 @@ const BubbleChart = ({
       }
     ]
   };
-
-  console.log('data', data);
 
   return <Bubble className='chartJS chartJS__all-countries' options={options} data={data} />;
 };

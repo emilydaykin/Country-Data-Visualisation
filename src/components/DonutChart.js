@@ -6,8 +6,6 @@ Chart.register(ArcElement);
 
 const DoughnutChart = ({ countryData }) => {
   const options = {
-    // maintainAspectRatio: true,
-    // responsive: true,
     plugins: {
       legend: {
         display: true,
@@ -30,7 +28,6 @@ const DoughnutChart = ({ countryData }) => {
       tooltip: {
         callbacks: {
           label: (context) => {
-            console.log('context', context);
             return ` ${context.label}: ${context.raw}%`;
           }
         },

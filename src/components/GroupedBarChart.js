@@ -30,7 +30,6 @@ const GroupedBarChart = ({ countryData }) => {
       tooltip: {
         callbacks: {
           label: (context) => {
-            console.log('context', context);
             return ` ${context.dataset.label}: ${context.raw}%`;
           }
         },

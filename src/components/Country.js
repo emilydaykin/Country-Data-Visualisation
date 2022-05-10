@@ -16,7 +16,6 @@ import {
 
 const Country = () => {
   const { id } = useParams();
-  console.log('id', id);
   const [countryData, setCountryData] = useState(null);
 
   useEffect(() => {
@@ -27,8 +26,6 @@ const Country = () => {
     };
     getCountryData();
   }, [id]);
-
-  console.log('countryData', countryData);
 
   const showGreenData = (data) => {
     return data ? data.toLocaleString() : 'No Data';

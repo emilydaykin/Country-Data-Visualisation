@@ -12,33 +12,14 @@ const GreenBarChart = ({
   southAmericaCountries,
   oceaniaCountries
 }) => {
-  // const [sampleSize, setSampleSize] = useState(0);
-
-  // let sampleSize = 0;
   const getTotal = (arr, metric) =>
     arr.reduce((a, b) => {
-      // console.log('a', a.name);
-      // console.log('b', b.name);
-      // let prev = !a[metric] ? 0 : a[metric];
-      // console.log('prev', prev);
       let next = !b[metric] ? 0 : b[metric];
-      // if (next > 0) {
-      //   // setSampleSize(sampleSize + 1);
-      //   sampleSize++;
-      // }
-      // console.log(`next (${b.name})`, next);
       return a + next;
     }, 0);
 
-  // console.log('total CO2 in oceania:', getTotal(oceaniaCountries, 'co2_emissions'));
-  // console.log('threatened species in oceania:', getTotal(oceaniaCountries, 'threatened_species'));
-  // console.log('sampleSize (with data)', sampleSize);
-  // console.log('total', oceaniaCountries.length);
-  // console.log('oceaniaCountries', oceaniaCountries);
-
   const options = {
     responsive: true,
-    // maintainAspectRatio: false,
     plugins: {
       legend: {
         display: true,
@@ -61,7 +42,6 @@ const GreenBarChart = ({
       tooltip: {
         callbacks: {
           label: (context) => {
-            console.log('context', context);
             return ` ${context.dataset.label.split(' ').slice(0, 2).join(' ')}: ${Number(
               context.raw.toFixed(0)
             ).toLocaleString()}`;

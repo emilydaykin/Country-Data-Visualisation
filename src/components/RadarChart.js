@@ -80,12 +80,9 @@ const RadarChart = ({
       tooltip: {
         callbacks: {
           title: (context) => {
-            console.log('title context', context);
             return `${context[0].label[0]}`;
           },
           label: (context) => {
-            console.log('context', context);
-            // return [`${context.label[0]}`, `${context.dataset.label}: ${context.raw}`];
             if (context.dataset.label.toLowerCase().includes('average')) {
               return ` ${context.dataset.label.split(' (')[0]}: ${context.raw.toFixed(1)}%`;
             } else {
@@ -135,7 +132,7 @@ const RadarChart = ({
       ['Asia', '(n=45/47)'],
       ['Africa', '(n=50/52)'],
       ['Europe', '(n=41/44)'],
-      ['North America', '(n=23/23)', ''],
+      ['North America', '(n=23/23)'],
       ['South America', '(n=12/12)'],
       ['Oceania', '(n=13/14)']
     ],
