@@ -65,17 +65,16 @@ const Country = () => {
   };
 
   return (
-    <section className='country-section'>
-      <div className='country-wrapper'>
-        <h1 className='country-name'>{id}</h1>
+    <section className='country'>
+      <div className='country__wrapper'>
+        <h1 className='country__name'>{id}</h1>
         {!countryData ? (
-          // <p>Loading Data for {id}...</p>
           <Loading />
         ) : (
           <div className='facts-wrapper'>
-            <div className='green-facts'>
+            <div className='facts-wrapper__green-facts'>
               <div
-                className='facts green-fact green-fact--co2'
+                className='facts-wrapper__facts green-fact'
                 id={!countryData.co2_emissions ? 'no-data' : ''}
               >
                 <span className='data-heading'>
@@ -87,7 +86,7 @@ const Country = () => {
                 </span>
               </div>
               <div
-                className='facts green-fact green-fact--forest'
+                className='facts-wrapper__facts green-fact'
                 id={!countryData.forested_area ? 'no-data' : ''}
               >
                 <span className='data-heading'>Forested Area</span>
@@ -97,7 +96,7 @@ const Country = () => {
                 </span>
               </div>
               <div
-                className='facts green-fact green-fact--surface'
+                className='facts-wrapper__facts green-fact'
                 id={!countryData.surface_area ? 'no-data' : ''}
               >
                 <span className='data-heading'>Surface Area</span>
@@ -107,25 +106,25 @@ const Country = () => {
                   <span className='superscript'>2</span>
                 </span>
               </div>
-              <div className='facts green-fact green-fact--species'>
+              <div className='facts-wrapper__facts green-fact'>
                 <span className='data-heading'>Threatened Species</span>
                 <FontAwesomeIcon className='icon' icon={faPaw} />
                 <span className='data'>{showGreenData(countryData.threatened_species)}</span>
               </div>
-              <div className='facts green-fact green-fact--tourists'>
+              <div className='facts-wrapper__facts green-fact'>
                 <span className='data-heading'>Number of Tourists</span>
                 <FontAwesomeIcon className='icon' icon={faPersonHiking} />
                 <span className='data'>{showGreenData(countryData.tourists)},000</span>
               </div>
             </div>
 
-            <div className='fast-facts-container'>
-              <div className='top-facts'>
-                <div className='facts general-facts-top'>
+            <div className='facts-wrapper__general-facts-container'>
+              <div className='top-facts-container'>
+                <div className='facts-wrapper__facts top-facts-container__general-facts-top'>
                   <h3>
                     {id}'s <span>Geography</span>
                   </h3>
-                  <div className='fast-facts'>
+                  <div className='general-facts'>
                     <p>
                       <span className='data-category'>Capital:</span>&nbsp;
                       {showFastFact(countryData.capital)}
@@ -165,11 +164,11 @@ const Country = () => {
                     </p>
                   </div>
                 </div>
-                <div className='facts general-facts-top'>
+                <div className='facts-wrapper__facts general-facts-top'>
                   <h3>
                     {id}'s <span>Economy</span>
                   </h3>
-                  <div className='fast-facts'>
+                  <div className='general-facts'>
                     <p>
                       <span className='data-category'>Currency:</span>&nbsp;
                       {showFastFact(countryData.currency)}
@@ -211,14 +210,14 @@ const Country = () => {
                   </div>
                 </div>
               </div>
-              <div className='facts general-facts-bottom'>
+              <div className='facts-wrapper__facts general-facts-container-bottom'>
                 <h3>
                   <span>Education & Health</span> in {id}
                 </h3>
-                <div className='fast-facts'>
-                  <div className='country-health-text'>
-                    <p className='paragraph-category-health'>
-                      <span className='data-category data-category-health'>
+                <div className='general-facts'>
+                  <div className='general-facts__country-health-text'>
+                    <p className='general-facts__health-paragraph'>
+                      <span className='data-category data-category--health'>
                         Infant Mortality <br /> (per 1,000 live births)
                       </span>
                       &nbsp;
@@ -226,8 +225,8 @@ const Country = () => {
                         {showFastFact(countryData.infant_mortality)}
                       </span>
                     </p>
-                    <p className='paragraph-category-health'>
-                      <span className='data-category data-category-health'>
+                    <p className='general-facts__health-paragraph'>
+                      <span className='data-category data-category--health'>
                         Fertility <br />
                         (births per woman)
                       </span>
@@ -236,10 +235,10 @@ const Country = () => {
                     </p>
                   </div>
                   <div className='single-country-plots'>
-                    <div className='country-pie-chart'>
+                    <div className='single-country-plots__country-pie-chart'>
                       <DoughnutChart countryData={countryData} />
                     </div>
-                    <div className='country-bar-charts'>
+                    <div className='single-country-plots__country-bar-charts'>
                       <SingleBarChart countryData={countryData} />
                       <GroupedBarChart countryData={countryData} />
                     </div>
