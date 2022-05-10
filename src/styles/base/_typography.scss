@@ -1,0 +1,14 @@
+.superscript {
+  vertical-align: super;
+  font-size: 1rem;
+
+  &--small {
+    vertical-align: super;
+    font-size: 0.75rem;
+  }
+}
+
+.subscript {
+  vertical-align: sub;
+  font-size: 1rem;
+}
