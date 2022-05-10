@@ -1,13 +1,38 @@
 # Green Country Data
-A React.js web application visualising green data for 192 countries using an API. Users can:
-* Select from 192 different countries to get each of their general facts (capital, GDP per capita, urban population, internet users etc) and how green they are (CO<sub>2</sub> emissions, forested area, threatened species, tourists etc). 
+A React.js web application visualising green data for 192 countries using an API. Features include:
+* Selecting from 192 different countries to get each of their general facts (capital, GDP per capita, urban population, internet users etc) and how green they are (CO<sub>2</sub> emissions, forested area, threatened species, tourists etc). 
   - Employment by sector, and life expectancy and education enrollment by gender are visualised through donut and bar charts.
-* View cross-sectional, point-in-time comparative green data for all countries via interactive bubble charts, bar charts and radar charts.
+* Viewing cross-sectional, point-in-time comparative green data for all countries via interactive bubble charts, bar charts and radar charts.
 
 (Please note the [Data Disclaimer](#data-disclaimer).)
 
 ## Site Walkthrough
-- Screenshots
+### Home and About pages
+<p align="center">
+  <img src="./src/assets/readme/home.png" width="47%"  />
+  <img src="./src/assets/readme/about.png" width="49%"  />
+</p>
+
+### All Countries
+#### Bubble chart (CO2 Emissions, Threatened Species, Forested Area & GDP)
+<p align="center">
+  <img src="./src/assets/readme/bubble-chart.gif" width="95%"  />
+</p>
+
+#### Bar Chart (CO2 Emissions & Threatened Species)
+<p align="center">
+  <img src="./src/assets/readme/green-bar-chart.gif" width="95%"  />
+</p>
+
+#### Radar Chart (Forested Area)
+<p align="center">
+  <img src="./src/assets/readme/radar-chart.gif" width="95%"  />
+</p>
+
+### Individual Country Page
+<p align="center">
+  <img src="./src/assets/readme/single-country-page.gif" width="95%"  />
+</p>
 
 ## Tech Stack Used:
 - Front End: React.js
