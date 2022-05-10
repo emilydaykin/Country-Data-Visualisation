@@ -7,7 +7,6 @@ import { countriesToDisplay } from '../lib/countryList';
 import { countryAPI } from '../lib/api';
 
 const AllCountries = () => {
-  // const [countries, setCountries] = useState({});
   const [firstQuantile, setFirstQuantile] = useState([]);
   const [secondQuantile, setSecondQuantile] = useState([]);
   const [thirdQuantile, setThirdQuantile] = useState({});
@@ -15,7 +14,6 @@ const AllCountries = () => {
   const [fifthQuantile, setFifthQuantile] = useState({});
   const [sixthQuantile, setSixthQuantile] = useState({});
 
-  // const [allRegions, setAllRegions] = useState({});
   const [asiaCountries, setAsiaCountries] = useState({});
   const [africaCountries, setAfricaCountries] = useState({});
   const [europeCountries, setEuropeCountries] = useState({});
@@ -33,12 +31,9 @@ const AllCountries = () => {
         const countryData = nextItem.data[0];
         return { ...prevItem, [countryData.name]: countryData };
       }, {});
-      // setCountries(data);
 
       const dataArray = Object.values(data);
 
-      // const regions = dataArray.map((country) => country.region);
-      // setAllRegions([...new Set(regions)]); // 22 regions
       const asia = dataArray.filter((country) => country.region.toLowerCase().includes('asia'));
       setAsiaCountries(asia);
       const africa = dataArray.filter((country) => country.region.toLowerCase().includes('africa'));
