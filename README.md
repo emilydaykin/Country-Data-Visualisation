@@ -6,7 +6,7 @@ A React.js web application visualising green data for 192 countries using an API
 
 (Please note the [Data Disclaimer](#data-disclaimer).)
 
-## Site Walkthrough
+## App Walkthrough
 ### Home and About Pages
 <p align="center">
   <img src="./src/assets/readme/home.png" width="47%"  />
