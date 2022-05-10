@@ -14,6 +14,7 @@ const GreenBarChart = ({
 }) => {
   // const [sampleSize, setSampleSize] = useState(0);
 
+  // let sampleSize = 0;
   const getTotal = (arr, metric) =>
     arr.reduce((a, b) => {
       // console.log('a', a.name);
@@ -22,14 +23,18 @@ const GreenBarChart = ({
       // console.log('prev', prev);
       let next = !b[metric] ? 0 : b[metric];
       // if (next > 0) {
-      //   setSampleSize(sampleSize + 1);
+      //   // setSampleSize(sampleSize + 1);
+      //   sampleSize++;
       // }
       // console.log(`next (${b.name})`, next);
       return a + next;
     }, 0);
 
-  // console.log('total CO2 in South America:', getTotal(southAmericaCountries, 'co2_emissions'));
-  // console.log('sampleSize', sampleSize);
+  // console.log('total CO2 in oceania:', getTotal(oceaniaCountries, 'co2_emissions'));
+  // console.log('threatened species in oceania:', getTotal(oceaniaCountries, 'threatened_species'));
+  // console.log('sampleSize (with data)', sampleSize);
+  // console.log('total', oceaniaCountries.length);
+  // console.log('oceaniaCountries', oceaniaCountries);
 
   const options = {
     responsive: true,
@@ -99,7 +104,14 @@ const GreenBarChart = ({
 
   const data = {
     responsive: true,
-    labels: ['Asia', 'Africa', 'Europe', 'North America', 'South America', 'Oceania'],
+    labels: [
+      ['Asia', '(n_CO2 = 41/47)', '(n_TS = 47/47)', ''],
+      ['Africa', '(n_CO2 = 28/52)', '(n_TS = 52/52)', ''],
+      ['Europe', '(n_CO2 = 39/44)', '(n_TS = 44/44)', ''],
+      ['North America', '(n_CO2 = 14/23)', '(n_TS = 23/23)', ''],
+      ['South America', '(n_CO2 = 11/12)', '(n_TS = 12/12)', ''],
+      ['Oceania', '(n_CO2 = 2/14)', '(n_TS = 14/14)', '']
+    ],
     datasets: [
       {
         label: 'Co2 Emissions (metric tonnes)',
@@ -117,7 +129,7 @@ const GreenBarChart = ({
         hoverBackgroundColor: 'rgba(128, 0, 128, 0.7)'
       },
       {
-        label: 'Threatened Species (n)',
+        label: 'Threatened Species (number)',
         data: [
           getTotal(asiaCountries, 'threatened_species'),
           getTotal(africaCountries, 'threatened_species'),
