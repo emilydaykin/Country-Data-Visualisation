@@ -1,11 +1,9 @@
-// @import '~bulma/bulma.sass';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import "base/base";
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-}
+@import "components/about";
+@import "components/all-countries";
+@import "components/chart-js";
+@import "components/country";
+@import "components/home";
+@import "components/loading";
+@import "components/navbar";

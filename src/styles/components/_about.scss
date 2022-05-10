@@ -1,0 +1,66 @@
+.about {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.45)),
+    url('../../assets/fields.jpeg');
+    background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  
+  &__wrapper {
+    width: 70%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+  }
+  
+  &__container {
+    
+    &--left {
+      display: flex;
+      flex-direction: column;
+      padding: 75px 0 0 75px;
+      max-width: 50%;
+      
+      h1 {
+        color: #fff;
+        margin: 0;
+        font-size: 50px;
+        font-weight: 600;
+        letter-spacing: 3px;
+      }
+    
+      p {
+        color: #fff;
+        font-size: 23px;
+      }
+    }
+  
+    &--right {
+      padding: 75px 100px 0 0;
+      text-align: right;
+      color: #fff;
+
+      a {
+        color: #e0ffff;
+        text-decoration: none;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      span {
+        font-weight: bold;
+      }
+
+      img {
+        width: 50px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+

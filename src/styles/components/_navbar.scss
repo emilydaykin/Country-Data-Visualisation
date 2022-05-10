@@ -1,14 +1,12 @@
 header {
   height: 15vh;
   min-height: 45px;
-  // background-color: #630580;
-  // background: linear-gradient(90deg, #630580, #dd79fc);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
   font-size: 20px;
-  position: absolute;  // `fixed` always stays at the top during scroll
+  position: absolute;
 }
 
 .navbar-item, .dropdown {

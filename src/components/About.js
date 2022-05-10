@@ -4,9 +4,9 @@ import linkedinLogo from '../assets/linkedin-logo.png';
 
 const About = () => {
   return (
-    <section className='about-section'>
-      <div className='about-wrapper'>
-        <div className='about-container-left'>
+    <section className='about'>
+      <div className='about__wrapper'>
+        <div className='about__container about__container--left'>
           <h1>Welcome!</h1>
           <p>
             Navigate to the Countries tab or select a country to see how green the countries are!{' '}
@@ -15,7 +15,7 @@ const About = () => {
             tourists and much more!
           </p>
         </div>
-        <div className='about-container-right'>
+        <div className='about__container about__container--right'>
           <h1>Created By</h1>
           <p>
             Copyright &copy; 2022 &nbsp;<span>Emily Daykin</span>
