@@ -1,5 +1,5 @@
 # Green Country Data
-A website visualising green data for 192 countries using a countries API. Users can:
+A React.js web application visualising green data for 192 countries using an API. Users can:
 * Select from 192 different countries to get each of their general facts (capital, GDP per capita, urban population, internet users etc) and how green they are (CO<sub>2</sub> emissions, forested area, threatened species, tourists etc). 
   - Employment by sector, and life expectancy and education enrollment by gender are visualised through donut and bar charts.
 * View cross-sectional, point-in-time comparative green data for all countries via interactive bubble charts, bar charts and radar charts.
@@ -73,7 +73,7 @@ options: {
 - Since it was my first time working with `chart.js`, it was extremely rewarding being finally able to present the data in a clear way, with the labels, tooltips (interactive hover) and legends styled and displayed (via the `options: callbacks` argument) consistently and informatively.
 
 ## Future Improvements:
-Fetching data from 192 endpoints makes the All Countries
+Fetching data from 192 endpoints makes the All Countries page slow to load (up to 5000ms), so an improvement would be to cache this data if the API data remain static.
 
 ## Data Disclaimer
-The goal of this project was to practise API handling and using chart.js to visualise data with no data pre-processing (cleaning, wrangling or analysis). Data quality is thus poor since the source is unknown and unverified. Data points are provided by an [API](https://api-ninjas.com/api/country).
+The goal of this project was to practise API handling and using chart.js to visualise data with very minimal data cleaning, wrangling or analysis. (Data pre-processing only included removing missing values from the radar chart's average calculation, grouping countries into 6 continents from the provided 22 regions, and binning data into GDP ranges.) Data quality is thus poor since the source is unknown and unverified. Data points are provided by [this API](https://api-ninjas.com/api/country).
