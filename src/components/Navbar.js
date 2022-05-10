@@ -10,17 +10,17 @@ const Navbar = () => {
   return (
     <header>
       <nav className='navbar'>
-        <Link className='navbar-item' to='/'>
+        <Link className='navbar__item' to='/'>
           Home
         </Link>
-        <Link className='navbar-item' to='/about'>
+        <Link className='navbar__item' to='/about'>
           About
         </Link>
-        <Link className='navbar-item' to='/all-countries'>
+        <Link className='navbar__item' to='/all-countries'>
           All Countries
         </Link>
         <label>
-          <select className='dropdown' value='Select Country' onChange={handleChange}>
+          <select className='navbar__dropdown' value='Select Country' onChange={handleChange}>
             <option defaultValue disabled hidden>
               Select Country
             </option>

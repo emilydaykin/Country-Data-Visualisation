@@ -9,29 +9,31 @@ header {
   position: absolute;
 }
 
-.navbar-item, .dropdown {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 400;
-  letter-spacing: 1px;
-
-  &:hover {
-    color:#cbffff;
-    cursor: pointer;
+.navbar {
+  &__item, &__dropdown {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+  
+    &:hover {
+      color:#cbffff;
+      cursor: pointer;
+    }
   }
-}
-
-.navbar-item {
-  padding: 30px;
-}
-
-.dropdown {
-  margin: 30px;
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
-  font-size: inherit;
-  width: 185px;
+  
+  &__item {
+    padding: 30px;
+  }
+  
+  &__dropdown {
+    margin: 30px;
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    width: 185px;
+  }
 }
 
 
