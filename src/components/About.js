@@ -21,18 +21,20 @@ const About = () => {
             Copyright &copy; 2022 &nbsp;<span>Emily Daykin</span>
           </p>
 
-          <a href='https://github.com/emilydaykin'>
+          <a href='https://github.com/emilydaykin' target='_blank' rel='noreferrer'>
             GitHub
             <img src={githubLogo} alt='github logo' />
           </a>
 
-          <a href='https://www.linkedin.com/in/emily-daykin/'>
+          <a href='https://www.linkedin.com/in/emily-daykin/' target='_blank' rel='noreferrer'>
             LinkedIn
             <img src={linkedinLogo} alt='github logo' />
           </a>
 
           <p>
-            <a href='#'>Portfolio</a>
+            <a href='https://emilydaykin.dev' target='_blank' rel='noreferrer'>
+              Portfolio
+            </a>
           </p>
         </div>
       </div>
